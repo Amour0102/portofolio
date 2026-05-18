@@ -33,6 +33,21 @@ export const metadata: Metadata = {
     description:
       "Product designer building transportation infrastructure and language preservation tools.",
     type: "website",
+    images: [
+      {
+        url: "/images/social-thumbnail-1200x630.png",
+        width: 1200,
+        height: 630,
+        alt: "Cyusa Amour — Product Designer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cyusa Amour — Product Designer",
+    description:
+      "Product designer building transportation infrastructure and language preservation tools.",
+    images: ["/images/social-thumbnail-1200x630.png"],
   },
 };
 

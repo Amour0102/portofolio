@@ -58,6 +58,44 @@ export const galleryGroups: GalleryGroup[] = [
       { src: "/images/gallery/2K-0.png", alt: "VugoGo – sidebar" },
     ],
   },
+  {
+    id: "group-6",
+    images: [
+      { src: "/images/gallery/1S-0.png", alt: "App screen – 1S" },
+    ],
+  },
+  {
+    id: "group-7",
+    images: [
+      { src: "/images/gallery/1U-0.png", alt: "App screen – 1U" },
+    ],
+  },
+  {
+    id: "group-8",
+    images: [
+      { src: "/images/gallery/1Q-0.png", alt: "App screen – 1Q" },
+      { src: "/images/gallery/2Q-0.png", alt: "App screen – 2Q" },
+    ],
+  },
+  {
+    id: "group-9",
+    images: [
+      { src: "/images/gallery/1R-0.png", alt: "App screen – 1R" },
+    ],
+  },
+  {
+    id: "group-10",
+    images: [
+      { src: "/images/gallery/1T-0.png", alt: "App screen – 1T" },
+    ],
+  },
+  {
+    id: "group-11",
+    images: [
+      { src: "/images/gallery/1P-0.png", alt: "App screen – 1P" },
+      { src: "/images/gallery/2P-0.png", alt: "App screen – 2P" },
+    ],
+  },
 ];
 
 export const projects: Project[] = [
