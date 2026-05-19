@@ -12,12 +12,21 @@ export type GalleryGroup = {
   images: GalleryImage[];
 };
 
+export type ProjectThumbnail = {
+  containerHeight: number;
+  imageWidth: number;
+  imageHeight: number;
+  centered?: boolean;
+  bg?: string;
+};
+
 export type Project = {
   id: string;
   title: string;
   client: string;
   tags: ("Apps" | "Website")[];
   image: string;
+  thumbnail?: ProjectThumbnail;
   description: string;
   href: string;
 };
@@ -116,6 +125,23 @@ export const projects: Project[] = [
     description:
       "End-to-end design of a transport management platform — covering ticketing, real-time tracking, analytics, and field-terminal operations.",
     href: "/work/ac-mobility",
+  },
+  {
+    id: "voit",
+    title: "Building a Commercial Design System Used by Designers at Adobe, Webflow, Zoom, and Typeform",
+    client: "Voit",
+    tags: ["Website"],
+    image: "/images/projects/voit-thumbnail.png",
+    thumbnail: {
+      containerHeight: 280,
+      imageWidth: 558,
+      imageHeight: 192,
+      centered: true,
+      bg: "#FFFFFF",
+    },
+    description:
+      "Commercial Figma design system covering tokens, components, patterns, and 150+ full-page blocks — used by design teams at Adobe, Webflow, Zoom, and Typeform.",
+    href: "/work/voit",
   },
 ];
 
