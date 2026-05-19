@@ -50,7 +50,7 @@ export default function Projects() {
             {project.thumbnail?.centered ? (
               /* Centered thumbnail style (e.g. Voit) */
               <div
-                className="w-full overflow-hidden rounded-xl sm:rounded-3xl outline outline-1 outline-[#F2F2F2] dark:outline-white/[0.08] transition-[transform,box-shadow] duration-300 ease-out group-hover:-translate-y-[3px] group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.3)] flex items-center justify-center h-auto py-6 sm:py-0 sm:h-[280px]"
+                className="w-full overflow-hidden rounded-xl sm:rounded-3xl outline outline-1 outline-[#F2F2F2] dark:outline-white/[0.08] transition-[transform,box-shadow] duration-300 ease-out group-hover:-translate-y-[3px] group-hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)] dark:group-hover:shadow-[0_4px_16px_rgba(0,0,0,0.2)] flex items-center justify-center h-auto py-6 sm:py-0 sm:h-[280px]"
                 style={{
                   backgroundColor: project.thumbnail.bg ?? "#F8F8F8",
                 }}
@@ -73,7 +73,7 @@ export default function Projects() {
             ) : (
               /* Full-bleed thumbnail style (default, e.g. AC Mobility) */
               <div
-                className="relative w-full overflow-hidden rounded-xl sm:rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#F2F2F2] dark:outline-white/[0.08] transition-[transform,box-shadow] duration-300 ease-out group-hover:-translate-y-[3px] group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.3)] h-[240px] sm:h-[440px]"
+                className="relative w-full overflow-hidden rounded-xl sm:rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#F2F2F2] dark:outline-white/[0.08] transition-[transform,box-shadow] duration-300 ease-out group-hover:-translate-y-[3px] group-hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)] dark:group-hover:shadow-[0_4px_16px_rgba(0,0,0,0.2)] h-[240px] sm:h-[440px]"
               >
                 <Image
                   src={project.image}

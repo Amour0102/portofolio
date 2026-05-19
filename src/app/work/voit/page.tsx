@@ -117,7 +117,7 @@ export default function VoitPage() {
                 Voit
               </a>
               {" "}is a premium Figma design system built for teams who think in systems. Ali Tohme,
-              Founder of Voit, had laid the foundation; core styles, tokens, miscellaneous assets,
+              founder of Voit, had laid the foundation; core styles, tokens, miscellaneous assets,
               components, and patterns were in place. I was brought in to build the top of the stack:
               Blocks - full page and screen compositions that turn a component library into something
               designers can actually ship from. Every block in Voit is my work.
