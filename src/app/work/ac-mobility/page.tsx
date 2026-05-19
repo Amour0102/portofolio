@@ -397,14 +397,12 @@ export default function AcMobilityPage() {
 function PhoneRow({ images, caption }: { images: { src: string; alt: string }[]; caption?: string }) {
   return (
     <div className="flex flex-col gap-3">
-      <div className="w-full rounded-2xl md:rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] overflow-x-auto p-2"
-        style={{ scrollbarWidth: "none" }}
-      >
-        <div className="flex flex-row gap-3 w-max md:w-auto">
+      <div className="w-full rounded-2xl md:rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] p-2">
+        <div className="flex flex-row gap-2 md:gap-6 w-full">
           {images.map(({ src, alt }) => (
             <div
               key={src + alt}
-              className="relative overflow-hidden rounded-xl md:rounded-[28px] flex-shrink-0 w-[152px] h-[313px] md:w-[240px] md:h-[494px]"
+              className="relative overflow-hidden rounded-xl md:rounded-[28px] flex-1 h-[200px] md:flex-none md:w-[240px] md:h-[494px]"
             >
               <Image
                 src={src}
