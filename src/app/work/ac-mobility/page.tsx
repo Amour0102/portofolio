@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { siteX } from "@/lib/layout";
 
 // ─── Sidebar nav items ────────────────────────────────────────────────────────
 const navItems = [
@@ -101,9 +102,9 @@ export default function AcMobilityPage() {
       <Navbar />
 
       {/* ── Back bar ─────────────────────────────────────────────────────── */}
-      <div className="w-full flex items-center px-[114px] h-[44px]">
-        <Link href="/" className="flex items-center gap-3 group">
-          <span className="flex items-center justify-center w-10 h-10 rounded-full outline outline-1 outline-[#E4E4E4] dark:outline-white/10">
+      <div className={`w-full flex items-center ${siteX} h-[44px]`}>
+        <Link href="/" className="flex items-center gap-2 sm:gap-3 group min-h-11">
+          <span className="flex items-center justify-center w-10 h-10 shrink-0 rounded-full outline outline-1 outline-[#E4E4E4] dark:outline-white/10">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path
                 fillRule="evenodd"
@@ -114,19 +115,40 @@ export default function AcMobilityPage() {
               />
             </svg>
           </span>
-          <span className="text-[#333333] dark:text-white font-semibold text-base leading-6 group-hover:opacity-70 transition-opacity">
+          <span className="text-[#333333] dark:text-white font-semibold text-sm sm:text-base leading-6 group-hover:opacity-70 transition-opacity">
             Go Back Home
           </span>
         </Link>
       </div>
 
-      {/* ── Two-column layout ─────────────────────────────────────────────── */}
-      {/*  1512px page · 114px side padding → 1284px inner             */}
-      {/*  sidebar 160px + gap 276px + sections 848px = 1284px          */}
-      <div className="flex-1 flex flex-row px-[114px] pt-16 pb-24 gap-[276px]">
+      {/* ── Mobile section nav ───────────────────────────────────────────── */}
+      <nav
+        className={`lg:hidden ${siteX} flex gap-4 overflow-x-auto pb-4 -mb-2 scrollbar-none`}
+        aria-label="Case study sections"
+      >
+        {navItems.map(({ id, label }) => {
+          const active = activeId === id;
+          return (
+            <a
+              key={id}
+              href={`#${id}`}
+              className={`shrink-0 min-h-11 flex items-center px-1 text-[13px] font-medium leading-5 whitespace-nowrap transition-colors ${
+                active
+                  ? "text-[#333333] dark:text-white"
+                  : "text-[#AAAAAA] hover:text-[#888888] dark:hover:text-white/60"
+              }`}
+            >
+              {label}
+            </a>
+          );
+        })}
+      </nav>
 
-        {/* ── Sticky sidebar ──────────────────────────────────────────────── */}
-        <aside className="w-[160px] flex-shrink-0 sticky top-[136px] h-fit flex flex-col gap-5">
+      {/* ── Two-column layout ─────────────────────────────────────────────── */}
+      <div className={`flex-1 flex flex-col lg:flex-row ${siteX} pt-8 sm:pt-12 lg:pt-16 pb-16 sm:pb-24 gap-10 lg:gap-[276px]`}>
+
+        {/* ── Sticky sidebar (desktop) ─────────────────────────────────────── */}
+        <aside className="hidden lg:flex w-[160px] flex-shrink-0 sticky top-[136px] h-fit flex-col gap-5">
           {navItems.map(({ id, label }) => {
             const active = activeId === id;
             return (
@@ -151,10 +173,10 @@ export default function AcMobilityPage() {
         </aside>
 
         {/* ── Main sections ────────────────────────────────────────────────── */}
-        <div className="w-[848px] flex flex-col">
+        <div className="w-full min-w-0 max-w-[848px] flex flex-col">
 
           {/* ══ 1. Overview ══════════════════════════════════════════════════ */}
-          <section id="overview" className="flex flex-col gap-6 pb-16 scroll-mt-40">
+          <section id="overview" className="flex flex-col gap-6 pb-12 sm:pb-16 scroll-mt-28 sm:scroll-mt-40">
             <h2 className="text-[20px] font-semibold leading-[1.3] tracking-[-0.01em] text-[#333333] dark:text-white">
               1. Overview
             </h2>
@@ -173,7 +195,7 @@ export default function AcMobilityPage() {
             </p>
 
             {/* Metrics row */}
-            <div className="flex flex-row gap-8">
+            <div className="flex flex-row flex-wrap gap-x-6 gap-y-4 sm:gap-8">
               {metrics.map(({ value, label }) => (
                 <div key={label} className="flex flex-col gap-1">
                   <span className="text-[22px] font-semibold leading-[1.2] tracking-[-0.02em] text-[#333333] dark:text-white">
@@ -188,7 +210,7 @@ export default function AcMobilityPage() {
           </section>
 
           {/* ══ 2. The System ════════════════════════════════════════════════ */}
-          <section id="the-system" className="flex flex-col gap-6 pb-16 scroll-mt-40">
+          <section id="the-system" className="flex flex-col gap-6 pb-16 scroll-mt-28 sm:scroll-mt-40">
             <h2 className="text-[20px] font-semibold leading-[1.3] tracking-[-0.01em] text-[#333333] dark:text-white">
               2. The System
             </h2>
@@ -210,7 +232,7 @@ export default function AcMobilityPage() {
           </section>
 
           {/* ══ 3. Three Decisions That Shaped the System ════════════════════ */}
-          <section id="design-decisions" className="flex flex-col gap-8 pb-16 scroll-mt-40">
+          <section id="design-decisions" className="flex flex-col gap-8 pb-16 scroll-mt-28 sm:scroll-mt-40">
             <h2 className="text-[20px] font-semibold leading-[1.3] tracking-[-0.01em] text-[#333333] dark:text-white">
               3. Decisions That Shaped the System
             </h2>
@@ -250,13 +272,13 @@ export default function AcMobilityPage() {
           </section>
 
           {/* ══ 4. Platform Spotlights ═══════════════════════════════════════ */}
-          <section id="platform-spotlights" className="flex flex-col gap-12 pb-16 scroll-mt-40">
+          <section id="platform-spotlights" className="flex flex-col gap-12 pb-16 scroll-mt-28 sm:scroll-mt-40">
             <h2 className="text-[20px] font-semibold leading-[1.3] tracking-[-0.01em] text-[#333333] dark:text-white">
               4. Platform Spotlights
             </h2>
 
             {/* 4.1 E-Ticketing Platform — web dashboard */}
-            <div id="e-ticketing" className="flex flex-col gap-4 scroll-mt-40">
+            <div id="e-ticketing" className="flex flex-col gap-4 scroll-mt-28 sm:scroll-mt-40">
               <p className="text-[14px] leading-[22px] font-medium text-[#888888]">
                 <strong className="font-semibold text-[#333333] dark:text-white">
                   4.1. E-Ticketing Platform (Web · Operations core)
@@ -267,7 +289,7 @@ export default function AcMobilityPage() {
               </p>
               <div className="flex flex-col gap-3">
                 <div className="w-full rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] p-6">
-                  <div className="relative w-full overflow-hidden rounded-2xl" style={{ height: 480 }}>
+                  <div className="relative w-full overflow-hidden rounded-2xl aspect-[848/480] max-h-[480px]">
                     <Image
                       src="/images/case-studies/ac-mobility/e-ticketing-dashboard.png"
                       alt="AC Mobility e-ticketing operations dashboard"
@@ -285,7 +307,7 @@ export default function AcMobilityPage() {
             </div>
 
             {/* 4.2 POS Terminal */}
-            <div id="agent-pos" className="flex flex-col gap-4 scroll-mt-40">
+            <div id="agent-pos" className="flex flex-col gap-4 scroll-mt-28 sm:scroll-mt-40">
               <p className="text-[14px] leading-[22px] font-medium text-[#888888]">
                 <strong className="font-semibold text-[#333333] dark:text-white">
                   4.2. POS Terminal (Android · Agent-facing)
@@ -305,7 +327,7 @@ export default function AcMobilityPage() {
             </div>
 
             {/* 4.3 Tap&Go */}
-            <div id="tap-go" className="flex flex-col gap-4 scroll-mt-40">
+            <div id="tap-go" className="flex flex-col gap-4 scroll-mt-28 sm:scroll-mt-40">
               <p className="text-[14px] leading-[22px] font-medium text-[#888888]">
                 <strong className="font-semibold text-[#333333] dark:text-white">
                   4.3. Tap&Go (Android, iOS, Web · Consumer)
@@ -325,7 +347,7 @@ export default function AcMobilityPage() {
             </div>
 
             {/* 4.4 USSD */}
-            <div id="ussd" className="flex flex-col gap-4 scroll-mt-40">
+            <div id="ussd" className="flex flex-col gap-4 scroll-mt-28 sm:scroll-mt-40">
               <p className="text-[14px] leading-[22px] font-medium text-[#888888]">
                 <strong className="font-semibold text-[#333333] dark:text-white">
                   4.4. USSD (Consumer)
@@ -345,7 +367,7 @@ export default function AcMobilityPage() {
             </div>
 
             {/* 4.5 Inspector App */}
-            <div id="inspector-app" className="flex flex-col gap-4 scroll-mt-40">
+            <div id="inspector-app" className="flex flex-col gap-4 scroll-mt-28 sm:scroll-mt-40">
               <p className="text-[14px] leading-[22px] font-medium text-[#888888]">
                 <strong className="font-semibold text-[#333333] dark:text-white">
                   4.5. Inspector App (Android · Field)
@@ -365,7 +387,7 @@ export default function AcMobilityPage() {
           </section>
 
           {/* ══ 5. Outcomes ══════════════════════════════════════════════════ */}
-          <section id="outcome" className="flex flex-col gap-6 pb-16 scroll-mt-40">
+          <section id="outcome" className="flex flex-col gap-6 pb-16 scroll-mt-28 sm:scroll-mt-40">
             <h2 className="text-[20px] font-semibold leading-[1.3] tracking-[-0.01em] text-[#333333] dark:text-white">
               5. Outcomes
             </h2>
@@ -397,18 +419,17 @@ export default function AcMobilityPage() {
 function PhoneRow({ images, caption }: { images: { src: string; alt: string }[]; caption?: string }) {
   return (
     <div className="flex flex-col gap-3">
-      <div className="w-full rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] flex flex-row gap-6 p-8 overflow-hidden">
+      <div className="w-full rounded-2xl sm:rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] flex flex-row gap-4 sm:gap-6 p-4 sm:p-8 overflow-x-auto">
         {images.map(({ src, alt }) => (
           <div
             key={src + alt}
-            className="relative overflow-hidden rounded-[28px] flex-shrink-0"
-            style={{ width: 240, height: 494 }}
+            className="relative overflow-hidden rounded-[20px] sm:rounded-[28px] flex-shrink-0 w-[132px] h-[272px] sm:w-[176px] sm:h-[362px] md:w-[240px] md:h-[494px]"
           >
             <Image
               src={src}
               alt={alt}
               fill
-              sizes="(min-resolution: 2dppx) 960px, 480px"
+              sizes="(max-width: 640px) 280px, 480px"
               unoptimized
               className="object-cover object-top"
               onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}

@@ -3,17 +3,39 @@
 import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 import { galleryGroups } from "@/lib/data";
+import {
+  getGalleryMetrics,
+  getGalleryStickyHeight,
+  type GalleryMetrics,
+} from "@/lib/layout";
+
+const DEFAULT_METRICS = getGalleryMetrics(1280);
+
+const cardShell =
+  "bg-[#F8F8F8] dark:bg-white/[0.06] transition-colors duration-200 flex flex-row items-center shrink-0 overflow-hidden rounded-3xl";
 
 export default function Gallery() {
-  const outerRef  = useRef<HTMLDivElement>(null);
+  const outerRef = useRef<HTMLDivElement>(null);
   const stickyRef = useRef<HTMLDivElement>(null);
-  const trackRef  = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
 
   const [scrollDist, setScrollDist] = useState(2032);
+  const [metrics, setMetrics] = useState<GalleryMetrics>(DEFAULT_METRICS);
+
+  const stickyHeight = metrics.useCompactSticky
+    ? getGalleryStickyHeight(metrics)
+    : null;
+
+  useEffect(() => {
+    const updateMetrics = () => setMetrics(getGalleryMetrics(window.innerWidth));
+    updateMetrics();
+    window.addEventListener("resize", updateMetrics);
+    return () => window.removeEventListener("resize", updateMetrics);
+  }, []);
 
   useEffect(() => {
     const measure = () => {
-      const track  = trackRef.current;
+      const track = trackRef.current;
       const sticky = stickyRef.current;
       if (!track || !sticky) return;
       const dist = track.scrollWidth - sticky.clientWidth;
@@ -22,7 +44,7 @@ export default function Gallery() {
     measure();
     window.addEventListener("resize", measure);
     return () => window.removeEventListener("resize", measure);
-  }, []);
+  }, [metrics, stickyHeight]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,98 +60,109 @@ export default function Gallery() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrollDist]);
 
+  const { web, phone, gap, groupGap, edgePad, cardH, useCompactSticky } = metrics;
+
+  const viewportH = useCompactSticky && stickyHeight ? stickyHeight : "100svh";
+  const outerH =
+    useCompactSticky && stickyHeight
+      ? stickyHeight + scrollDist
+      : `calc(100svh + ${scrollDist}px)`;
+
   return (
-    <div
-      ref={outerRef}
-      className="w-full"
-      style={{ height: `calc(100vh + ${scrollDist}px)` }}
+    <section
+      className="w-full max-lg:py-4 lg:py-0"
+      aria-label="Work samples gallery section"
     >
       <div
-        ref={stickyRef}
-        aria-label="Work samples gallery"
-        className="w-full overflow-hidden bg-white dark:bg-[#0D0D0D] transition-colors duration-200"
-        style={{
-          position: "sticky",
-          top: 0,
-          height: "100vh",
-          display: "flex",
-          alignItems: "center",
-        }}
+        ref={outerRef}
+        className="w-full"
+        style={{ height: typeof outerH === "number" ? `${outerH}px` : outerH }}
       >
         <div
-          ref={trackRef}
-          style={{ display: "flex", gap: 24, width: "max-content", willChange: "transform" }}
+          ref={stickyRef}
+          aria-label="Work samples gallery"
+          className="w-full overflow-hidden bg-white dark:bg-[#0D0D0D] transition-colors duration-200"
+          style={{
+            position: "sticky",
+            top: 0,
+            height: typeof viewportH === "number" ? `${viewportH}px` : viewportH,
+            display: "flex",
+            alignItems: useCompactSticky ? "flex-start" : "center",
+          }}
         >
-          {galleryGroups.map((group) =>
-            group.type === "web" ? (
-              // Web app screenshots — Paper frames 6/7/9/10: 791×574 card, 16px pad, 759×540 image
-              <div
-                key={group.id}
-                className="bg-[#F8F8F8] dark:bg-white/[0.06] transition-colors duration-200"
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: 24,
-                  padding: 16,
-                  borderRadius: 24,
-                  height: 574,
-                  overflow: "hidden",
-                  flexShrink: 0,
-                }}
-              >
-                {group.images.map((img) => (
-                  // Native img — serves original PNG from /public with no Next.js optimization
-                  <img
-                    key={img.src}
-                    src={img.src}
-                    alt={img.alt}
-                    width={img.width}
-                    height={img.height}
-                    className="block shrink-0 object-cover object-center"
-                    style={{ width: 759, height: 540 }}
-                    draggable={false}
-                    decoding="async"
-                  />
-                ))}
-              </div>
-            ) : (
-              // Phone screenshots — rounded card with bg
-              <div
-                key={group.id}
-                className="bg-[#F8F8F8] dark:bg-white/10 transition-colors duration-200"
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: 24,
-                  padding: 40,
-                  borderRadius: 24,
-                  overflow: "hidden",
-                  flexShrink: 0,
-                }}
-              >
-                {group.images.map((img) => (
-                  <div
-                    key={img.src}
-                    style={{ position: "relative", width: 240, height: 494, flexShrink: 0 }}
-                  >
-                    <Image
+          <div
+            ref={trackRef}
+            style={{
+              display: "flex",
+              gap: groupGap,
+              width: "max-content",
+              willChange: "transform",
+              paddingLeft: edgePad,
+              paddingRight: edgePad,
+            }}
+          >
+            {galleryGroups.map((group) =>
+              group.type === "web" ? (
+                <div
+                  key={group.id}
+                  className={cardShell}
+                  style={{
+                    gap,
+                    padding: web.pad,
+                    height: cardH,
+                  }}
+                >
+                  {group.images.map((img) => (
+                    <img
+                      key={img.src}
                       src={img.src}
                       alt={img.alt}
-                      fill
-                      sizes="(min-resolution: 2dppx) 960px, 480px"
-                      unoptimized
-                      className="object-cover"
+                      width={img.width}
+                      height={img.height}
+                      className="block shrink-0 object-cover object-center"
+                      style={{ width: web.imgW, height: web.imgH }}
                       draggable={false}
+                      decoding="async"
                     />
-                  </div>
-                ))}
-              </div>
-            )
-          )}
+                  ))}
+                </div>
+              ) : (
+                <div
+                  key={group.id}
+                  className={`${cardShell} dark:bg-white/10`}
+                  style={{
+                    gap,
+                    padding: phone.pad,
+                    height: cardH,
+                  }}
+                >
+                  {group.images.map((img) => (
+                    <div
+                      key={img.src}
+                      style={{
+                        position: "relative",
+                        width: phone.imgW,
+                        height: phone.imgH,
+                        flexShrink: 0,
+                      }}
+                    >
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        sizes="(max-width: 640px) 280px, 480px"
+                        unoptimized
+                        className="object-cover"
+                        draggable={false}
+                      />
+                    </div>
+                  ))}
+                </div>
+              )
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

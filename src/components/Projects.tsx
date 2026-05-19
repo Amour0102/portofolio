@@ -47,29 +47,59 @@ export default function Projects() {
             href={project.href}
             className="group flex flex-col gap-4"
           >
-            {/* 4R-0: 576×440, border-radius 24px, overflow clip */}
-            <div
-              className="relative w-full overflow-hidden rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#F2F2F2] dark:outline-white/[0.08] transition-[transform,box-shadow] duration-300 ease-out group-hover:-translate-y-[3px] group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
-              style={{ height: 440 }}
-            >
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={900}
-                height={640}
-                unoptimized
+            {project.thumbnail?.centered ? (
+              /* Centered thumbnail style (e.g. Voit) */
+              <div
+                className="relative w-full overflow-hidden rounded-3xl outline outline-1 outline-[#F2F2F2] dark:outline-white/[0.08] transition-[transform,box-shadow] duration-300 ease-out group-hover:-translate-y-[3px] group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
                 style={{
-                  position: "absolute",
-                  top: 24,
-                  left: 24,
-                  width: 900,
-                  height: 640,
-                  maxWidth: "none",
+                  height: project.thumbnail.containerHeight,
+                  backgroundColor: project.thumbnail.bg ?? "#F8F8F8",
                 }}
-                className="transition-transform duration-500 ease-out group-hover:scale-[1.015] will-change-transform"
-                priority
-              />
-            </div>
+              >
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={project.thumbnail.imageWidth}
+                  height={project.thumbnail.imageHeight}
+                  unoptimized
+                  style={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    translate: "-50% -50%",
+                    width: project.thumbnail.imageWidth,
+                    height: project.thumbnail.imageHeight,
+                    maxWidth: "none",
+                  }}
+                  className="transition-transform duration-500 ease-out group-hover:scale-[1.015] will-change-transform"
+                  priority
+                />
+              </div>
+            ) : (
+              /* Full-bleed thumbnail style (default, e.g. AC Mobility) */
+              <div
+                className="relative w-full overflow-hidden rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#F2F2F2] dark:outline-white/[0.08] transition-[transform,box-shadow] duration-300 ease-out group-hover:-translate-y-[3px] group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
+                style={{ height: 440 }}
+              >
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={900}
+                  height={640}
+                  unoptimized
+                  style={{
+                    position: "absolute",
+                    top: 24,
+                    left: 24,
+                    width: 900,
+                    height: 640,
+                    maxWidth: "none",
+                  }}
+                  className="transition-transform duration-500 ease-out group-hover:scale-[1.015] will-change-transform"
+                  priority
+                />
+              </div>
+            )}
 
             {/* Title + client */}
             <div className="flex flex-col gap-2">
