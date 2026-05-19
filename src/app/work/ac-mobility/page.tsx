@@ -123,10 +123,10 @@ export default function AcMobilityPage() {
       {/* ── Two-column layout ─────────────────────────────────────────────── */}
       {/*  1512px page · 114px side padding → 1284px inner             */}
       {/*  sidebar 160px + gap 276px + sections 848px = 1284px          */}
-      <div className="flex-1 flex flex-col md:flex-row px-6 md:px-[114px] pt-8 md:pt-16 pb-16 md:pb-24 gap-0 md:gap-[276px]">
+      <div className="flex-1 flex flex-col min-[1512px]:flex-row px-6 md:px-[114px] pt-8 md:pt-16 pb-8 md:pb-16 gap-0 min-[1512px]:gap-[276px]">
 
         {/* ── Sticky sidebar — desktop only ───────────────────────────────── */}
-        <aside className="hidden md:flex w-[160px] flex-shrink-0 sticky top-[136px] h-fit flex-col gap-5">
+        <aside className="hidden min-[1512px]:flex w-[160px] flex-shrink-0 sticky top-[136px] h-fit flex-col gap-5">
           {navItems.map(({ id, label }) => {
             const active = activeId === id;
             return (
@@ -151,10 +151,10 @@ export default function AcMobilityPage() {
         </aside>
 
         {/* ── Main sections ────────────────────────────────────────────────── */}
-        <div className="w-full md:w-[848px] flex flex-col">
+        <div className="w-full min-[1512px]:w-[848px] flex flex-col">
 
           {/* ══ 1. Overview ══════════════════════════════════════════════════ */}
-          <section id="overview" className="flex flex-col gap-6 pb-16 scroll-mt-40">
+          <section id="overview" className="flex flex-col gap-6 pb-10 md:pb-16 scroll-mt-20 md:scroll-mt-40">
             <h2 className="text-[20px] font-semibold leading-[1.3] tracking-[-0.01em] text-[#333333] dark:text-white">
               1. Overview
             </h2>
@@ -188,7 +188,7 @@ export default function AcMobilityPage() {
           </section>
 
           {/* ══ 2. The System ════════════════════════════════════════════════ */}
-          <section id="the-system" className="flex flex-col gap-6 pb-16 scroll-mt-40">
+          <section id="the-system" className="flex flex-col gap-6 pb-10 md:pb-16 scroll-mt-20 md:scroll-mt-40">
             <h2 className="text-[20px] font-semibold leading-[1.3] tracking-[-0.01em] text-[#333333] dark:text-white">
               2. The System
             </h2>
@@ -210,7 +210,7 @@ export default function AcMobilityPage() {
           </section>
 
           {/* ══ 3. Three Decisions That Shaped the System ════════════════════ */}
-          <section id="design-decisions" className="flex flex-col gap-8 pb-16 scroll-mt-40">
+          <section id="design-decisions" className="flex flex-col gap-8 pb-10 md:pb-16 scroll-mt-20 md:scroll-mt-40">
             <h2 className="text-[20px] font-semibold leading-[1.3] tracking-[-0.01em] text-[#333333] dark:text-white">
               3. Decisions That Shaped the System
             </h2>
@@ -250,13 +250,13 @@ export default function AcMobilityPage() {
           </section>
 
           {/* ══ 4. Platform Spotlights ═══════════════════════════════════════ */}
-          <section id="platform-spotlights" className="flex flex-col gap-12 pb-16 scroll-mt-40">
+          <section id="platform-spotlights" className="flex flex-col gap-12 pb-10 md:pb-16 scroll-mt-20 md:scroll-mt-40">
             <h2 className="text-[20px] font-semibold leading-[1.3] tracking-[-0.01em] text-[#333333] dark:text-white">
               4. Platform Spotlights
             </h2>
 
             {/* 4.1 E-Ticketing Platform — web dashboard */}
-            <div id="e-ticketing" className="flex flex-col gap-4 scroll-mt-40">
+            <div id="e-ticketing" className="flex flex-col gap-4 scroll-mt-20 md:scroll-mt-40">
               <p className="text-[14px] leading-[22px] font-medium text-[#888888]">
                 <strong className="font-semibold text-[#333333] dark:text-white">
                   4.1. E-Ticketing Platform (Web · Operations core)
@@ -267,7 +267,7 @@ export default function AcMobilityPage() {
               </p>
               <div className="flex flex-col gap-3">
                 <div className="w-full rounded-2xl md:rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] p-2">
-                  <div className="relative w-full overflow-hidden rounded-lg md:rounded-2xl h-[200px] md:h-[480px]">
+                  <div className="relative w-full overflow-hidden rounded-lg md:rounded-2xl h-[200px] lg:h-[480px]">
                     <Image
                       src="/images/case-studies/ac-mobility/e-ticketing-dashboard.png"
                       alt="AC Mobility e-ticketing operations dashboard"
@@ -285,7 +285,7 @@ export default function AcMobilityPage() {
             </div>
 
             {/* 4.2 POS Terminal */}
-            <div id="agent-pos" className="flex flex-col gap-4 scroll-mt-40">
+            <div id="agent-pos" className="flex flex-col gap-4 scroll-mt-20 md:scroll-mt-40">
               <p className="text-[14px] leading-[22px] font-medium text-[#888888]">
                 <strong className="font-semibold text-[#333333] dark:text-white">
                   4.2. POS Terminal (Android · Agent-facing)
@@ -305,7 +305,7 @@ export default function AcMobilityPage() {
             </div>
 
             {/* 4.3 Tap&Go */}
-            <div id="tap-go" className="flex flex-col gap-4 scroll-mt-40">
+            <div id="tap-go" className="flex flex-col gap-4 scroll-mt-20 md:scroll-mt-40">
               <p className="text-[14px] leading-[22px] font-medium text-[#888888]">
                 <strong className="font-semibold text-[#333333] dark:text-white">
                   4.3. Tap&Go (Android, iOS, Web · Consumer)
@@ -325,7 +325,7 @@ export default function AcMobilityPage() {
             </div>
 
             {/* 4.4 USSD */}
-            <div id="ussd" className="flex flex-col gap-4 scroll-mt-40">
+            <div id="ussd" className="flex flex-col gap-4 scroll-mt-20 md:scroll-mt-40">
               <p className="text-[14px] leading-[22px] font-medium text-[#888888]">
                 <strong className="font-semibold text-[#333333] dark:text-white">
                   4.4. USSD (Consumer)
@@ -345,7 +345,7 @@ export default function AcMobilityPage() {
             </div>
 
             {/* 4.5 Inspector App */}
-            <div id="inspector-app" className="flex flex-col gap-4 scroll-mt-40">
+            <div id="inspector-app" className="flex flex-col gap-4 scroll-mt-20 md:scroll-mt-40">
               <p className="text-[14px] leading-[22px] font-medium text-[#888888]">
                 <strong className="font-semibold text-[#333333] dark:text-white">
                   4.5. Inspector App (Android · Field)
@@ -365,7 +365,7 @@ export default function AcMobilityPage() {
           </section>
 
           {/* ══ 5. Outcomes ══════════════════════════════════════════════════ */}
-          <section id="outcome" className="flex flex-col gap-6 pb-16 scroll-mt-40">
+          <section id="outcome" className="flex flex-col gap-6 pb-10 md:pb-16 scroll-mt-20 md:scroll-mt-40">
             <h2 className="text-[20px] font-semibold leading-[1.3] tracking-[-0.01em] text-[#333333] dark:text-white">
               5. Outcomes
             </h2>
@@ -398,11 +398,11 @@ function PhoneRow({ images, caption }: { images: { src: string; alt: string }[];
   return (
     <div className="flex flex-col gap-3">
       <div className="w-full rounded-2xl md:rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] p-2">
-        <div className="flex flex-row gap-2 md:gap-6 w-full">
+        <div className="flex flex-row gap-2 lg:gap-6 w-full">
           {images.map(({ src, alt }) => (
             <div
               key={src + alt}
-              className="relative overflow-hidden rounded-xl md:rounded-[28px] flex-1 h-[200px] md:flex-none md:w-[240px] md:h-[494px]"
+              className="relative overflow-hidden rounded-xl lg:rounded-[28px] flex-1 h-[200px] lg:flex-none lg:w-[240px] lg:h-[494px]"
             >
               <Image
                 src={src}

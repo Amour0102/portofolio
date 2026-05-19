@@ -43,7 +43,7 @@ export default function Gallery() {
       {/* ── Mobile: native horizontal swipe ── */}
       <div
         aria-label="Work samples gallery"
-        className="md:hidden w-full overflow-x-auto bg-white dark:bg-[#0D0D0D] transition-colors duration-200 py-10"
+        className="lg:hidden w-full overflow-x-auto bg-white dark:bg-[#0D0D0D] transition-colors duration-200 py-6"
         style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch", scrollbarWidth: "none" }}
       >
         <div style={{ display: "flex", alignItems: "flex-start", gap: 12, paddingLeft: 24, paddingRight: 24, width: "max-content" }}>
@@ -110,7 +110,7 @@ export default function Gallery() {
       {/* ── Desktop: scroll-driven horizontal pan ── */}
       <div
         ref={outerRef}
-        className="hidden md:block w-full"
+        className="hidden lg:block w-full"
         style={{ height: `calc(100vh + ${scrollDist}px)` }}
       >
         <div
