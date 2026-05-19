@@ -53,9 +53,9 @@ export default function Gallery() {
                 key={group.id}
                 className="bg-[#F8F8F8] dark:bg-white/[0.06] transition-colors duration-200"
                 style={{
-                  width: 295,
+                  height: 287,
                   borderRadius: 20,
-                  padding: 12,
+                  padding: 16,
                   overflow: "hidden",
                   flexShrink: 0,
                   scrollSnapAlign: "start",
@@ -68,7 +68,7 @@ export default function Gallery() {
                     alt={img.alt}
                     draggable={false}
                     decoding="async"
-                    style={{ width: "100%", height: "auto", display: "block", objectFit: "cover", objectPosition: "top left", borderRadius: 10 }}
+                    style={{ height: "100%", width: "auto", display: "block", borderRadius: 10 }}
                   />
                 ))}
               </div>
