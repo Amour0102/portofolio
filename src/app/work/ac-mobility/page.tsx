@@ -101,7 +101,7 @@ export default function AcMobilityPage() {
       <Navbar />
 
       {/* ── Back bar ─────────────────────────────────────────────────────── */}
-      <div className="w-full flex items-center px-[114px] h-[44px]">
+      <div className="w-full flex items-center px-6 md:px-[114px] h-[44px]">
         <Link href="/" className="flex items-center gap-3 group">
           <span className="flex items-center justify-center w-10 h-10 rounded-full outline outline-1 outline-[#E4E4E4] dark:outline-white/10">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -123,10 +123,10 @@ export default function AcMobilityPage() {
       {/* ── Two-column layout ─────────────────────────────────────────────── */}
       {/*  1512px page · 114px side padding → 1284px inner             */}
       {/*  sidebar 160px + gap 276px + sections 848px = 1284px          */}
-      <div className="flex-1 flex flex-row px-[114px] pt-16 pb-24 gap-[276px]">
+      <div className="flex-1 flex flex-col md:flex-row px-6 md:px-[114px] pt-8 md:pt-16 pb-16 md:pb-24 gap-0 md:gap-[276px]">
 
-        {/* ── Sticky sidebar ──────────────────────────────────────────────── */}
-        <aside className="w-[160px] flex-shrink-0 sticky top-[136px] h-fit flex flex-col gap-5">
+        {/* ── Sticky sidebar — desktop only ───────────────────────────────── */}
+        <aside className="hidden md:flex w-[160px] flex-shrink-0 sticky top-[136px] h-fit flex-col gap-5">
           {navItems.map(({ id, label }) => {
             const active = activeId === id;
             return (
@@ -151,7 +151,7 @@ export default function AcMobilityPage() {
         </aside>
 
         {/* ── Main sections ────────────────────────────────────────────────── */}
-        <div className="w-[848px] flex flex-col">
+        <div className="w-full md:w-[848px] flex flex-col">
 
           {/* ══ 1. Overview ══════════════════════════════════════════════════ */}
           <section id="overview" className="flex flex-col gap-6 pb-16 scroll-mt-40">
@@ -173,7 +173,7 @@ export default function AcMobilityPage() {
             </p>
 
             {/* Metrics row */}
-            <div className="flex flex-row gap-8">
+            <div className="flex flex-row flex-wrap gap-x-8 gap-y-5">
               {metrics.map(({ value, label }) => (
                 <div key={label} className="flex flex-col gap-1">
                   <span className="text-[22px] font-semibold leading-[1.2] tracking-[-0.02em] text-[#333333] dark:text-white">
@@ -267,7 +267,7 @@ export default function AcMobilityPage() {
               </p>
               <div className="flex flex-col gap-3">
                 <div className="w-full rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] p-6">
-                  <div className="relative w-full overflow-hidden rounded-2xl" style={{ height: 480 }}>
+                  <div className="relative w-full overflow-hidden rounded-2xl h-[200px] md:h-[480px]">
                     <Image
                       src="/images/case-studies/ac-mobility/e-ticketing-dashboard.png"
                       alt="AC Mobility e-ticketing operations dashboard"
@@ -397,24 +397,27 @@ export default function AcMobilityPage() {
 function PhoneRow({ images, caption }: { images: { src: string; alt: string }[]; caption?: string }) {
   return (
     <div className="flex flex-col gap-3">
-      <div className="w-full rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] flex flex-row gap-6 p-8 overflow-hidden">
-        {images.map(({ src, alt }) => (
-          <div
-            key={src + alt}
-            className="relative overflow-hidden rounded-[28px] flex-shrink-0"
-            style={{ width: 240, height: 494 }}
-          >
-            <Image
-              src={src}
-              alt={alt}
-              fill
-              sizes="(min-resolution: 2dppx) 960px, 480px"
-              unoptimized
-              className="object-cover object-top"
-              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
-            />
-          </div>
-        ))}
+      <div className="w-full rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] overflow-x-auto p-5 md:p-8"
+        style={{ scrollbarWidth: "none" }}
+      >
+        <div className="flex flex-row gap-4 md:gap-6 w-max md:w-auto">
+          {images.map(({ src, alt }) => (
+            <div
+              key={src + alt}
+              className="relative overflow-hidden rounded-[20px] md:rounded-[28px] flex-shrink-0 w-[160px] h-[330px] md:w-[240px] md:h-[494px]"
+            >
+              <Image
+                src={src}
+                alt={alt}
+                fill
+                sizes="(min-resolution: 2dppx) 960px, 480px"
+                unoptimized
+                className="object-cover object-top"
+                onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+              />
+            </div>
+          ))}
+        </div>
       </div>
       {caption && (
         <p className="text-center text-[14px] font-medium text-[#888888]">{caption}</p>
