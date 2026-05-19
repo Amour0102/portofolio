@@ -227,7 +227,7 @@ export default function AcMobilityPage() {
                   {/* Screenshot — only rendered when image is provided */}
                   {image && (
                     <div className="flex flex-col gap-3">
-                      <div className="w-full rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] p-6">
+                      <div className="w-full rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] p-4">
                         <Image
                           src={image}
                           alt={phrase}
@@ -266,7 +266,7 @@ export default function AcMobilityPage() {
                 overwhelmed by system complexity.
               </p>
               <div className="flex flex-col gap-3">
-                <div className="w-full rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] p-6">
+                <div className="w-full rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] p-4">
                   <div className="relative w-full overflow-hidden rounded-2xl h-[200px] md:h-[480px]">
                     <Image
                       src="/images/case-studies/ac-mobility/e-ticketing-dashboard.png"
@@ -397,14 +397,14 @@ export default function AcMobilityPage() {
 function PhoneRow({ images, caption }: { images: { src: string; alt: string }[]; caption?: string }) {
   return (
     <div className="flex flex-col gap-3">
-      <div className="w-full rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] overflow-x-auto p-5 md:p-8"
+      <div className="w-full rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] overflow-x-auto p-4"
         style={{ scrollbarWidth: "none" }}
       >
-        <div className="flex flex-row gap-4 md:gap-6 w-max md:w-auto">
+        <div className="flex flex-row gap-3 w-max md:w-auto">
           {images.map(({ src, alt }) => (
             <div
               key={src + alt}
-              className="relative overflow-hidden rounded-[20px] md:rounded-[28px] flex-shrink-0 w-[160px] h-[330px] md:w-[240px] md:h-[494px]"
+              className="relative overflow-hidden rounded-[16px] md:rounded-[28px] flex-shrink-0 w-[152px] h-[313px] md:w-[240px] md:h-[494px]"
             >
               <Image
                 src={src}
