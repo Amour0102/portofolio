@@ -27,7 +27,7 @@ export default function Projects() {
             <button
               key={tab}
               onClick={() => setActive(tab)}
-              className={`text-[13px] leading-5 transition-colors ${
+              className={`text-[13px] leading-5 py-2.5 -my-2.5 transition-colors ${
                 active === tab
                   ? "font-semibold text-[#333333] dark:text-white"
                   : "font-medium text-[#888888]"
@@ -47,34 +47,54 @@ export default function Projects() {
             href={project.href}
             className="group flex flex-col gap-4"
           >
-            {/* 4R-0: 576×440, border-radius 24px, overflow clip */}
-            <div
-              className="relative w-full overflow-hidden rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#F2F2F2] dark:outline-white/[0.08] transition-[transform,box-shadow] duration-300 ease-out group-hover:-translate-y-[3px] group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
-              style={{ height: 440 }}
-            >
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={900}
-                height={640}
-                unoptimized
+            {project.thumbnail?.centered ? (
+              /* Centered thumbnail style (e.g. Voit) */
+              <div
+                className="w-full overflow-hidden rounded-xl sm:rounded-3xl outline outline-1 outline-[#F2F2F2] dark:outline-white/[0.08] transition-[transform,box-shadow] duration-300 ease-out group-hover:-translate-y-[3px] group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.3)] flex items-center justify-center h-auto py-6 sm:py-0 sm:h-[280px]"
                 style={{
-                  position: "absolute",
-                  top: 24,
-                  left: 24,
-                  width: 900,
-                  height: 640,
-                  maxWidth: "none",
+                  backgroundColor: project.thumbnail.bg ?? "#F8F8F8",
                 }}
-                className="transition-transform duration-500 ease-out group-hover:scale-[1.015] will-change-transform"
-                priority
-              />
-            </div>
+              >
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={project.thumbnail.imageWidth}
+                  height={project.thumbnail.imageHeight}
+                  unoptimized
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    maxWidth: project.thumbnail.imageWidth,
+                  }}
+                  className="transition-transform duration-500 ease-out group-hover:scale-[1.015] will-change-transform"
+                  priority
+                />
+              </div>
+            ) : (
+              /* Full-bleed thumbnail style (default, e.g. AC Mobility) */
+              <div
+                className="relative w-full overflow-hidden rounded-xl sm:rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#F2F2F2] dark:outline-white/[0.08] transition-[transform,box-shadow] duration-300 ease-out group-hover:-translate-y-[3px] group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.3)] h-[240px] sm:h-[440px]"
+              >
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={900}
+                  height={640}
+                  unoptimized
+                  style={{
+                    position: "absolute",
+                    maxWidth: "none",
+                  }}
+                  className="top-3 left-3 sm:top-6 sm:left-6 w-full h-auto sm:w-[900px] sm:h-[640px] transition-transform duration-500 ease-out group-hover:scale-[1.015] will-change-transform"
+                  priority
+                />
+              </div>
+            )}
 
             {/* Title + client */}
             <div className="flex flex-col gap-2">
               <h3
-                className="text-[22px] font-semibold leading-[30px] tracking-[-0.02em] text-[#333333] dark:text-white transition-opacity duration-300 ease-out group-hover:opacity-80"
+                className="text-[18px] sm:text-[22px] font-semibold leading-[26px] sm:leading-[30px] tracking-[-0.02em] text-[#333333] dark:text-white transition-opacity duration-300 ease-out group-hover:opacity-80"
               >
                 {project.title}
               </h3>

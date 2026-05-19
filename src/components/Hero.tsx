@@ -1,8 +1,10 @@
+const linkCls = "inline-block py-2 -my-2 underline underline-offset-2 hover:opacity-70 transition-opacity";
+
 export default function Hero() {
   return (
     <section className="w-full max-w-[576px] flex flex-col gap-4">
       <div className="flex flex-col gap-1">
-        <h1 className="text-[24px] font-semibold leading-8 tracking-[-0.02em] text-black dark:text-white">
+        <h1 className="text-[28px] sm:text-[24px] font-semibold leading-9 sm:leading-8 tracking-[-0.02em] text-black dark:text-white">
           Cyusa Amour
         </h1>
         <p className="text-[14px] font-medium leading-5 capitalize text-[#888888]">
@@ -21,7 +23,7 @@ export default function Hero() {
           href="https://voit.io"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline underline-offset-2 hover:opacity-70 transition-opacity"
+          className={linkCls}
         >
           Voit
         </a>
@@ -43,7 +45,7 @@ export default function Hero() {
           href="https://x.com/cyusa_drizy"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline underline-offset-2 hover:opacity-70 transition-opacity"
+          className={`${linkCls} px-2 -mx-2`}
         >
           X
         </a>
@@ -52,14 +54,14 @@ export default function Hero() {
           href="https://www.linkedin.com/in/cyusa-bahizi-amour-175a9a225/"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline underline-offset-2 hover:opacity-70 transition-opacity"
+          className={linkCls}
         >
           LinkedIn
         </a>{" "}
         or reach me via{" "}
         <a
           href="mailto:cyusaamour@gmail.com"
-          className="underline underline-offset-2 hover:opacity-70 transition-opacity"
+          className={linkCls}
         >
           email
         </a>
