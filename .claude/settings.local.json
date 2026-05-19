@@ -57,7 +57,10 @@
       "Bash(curl -s http://localhost:3000/)",
       "Read(//tmp/**)",
       "Bash(kill 98690)",
-      "Read(//private/tmp/**)"
+      "Read(//private/tmp/**)",
+      "Bash(gh auth *)",
+      "Bash(git -C /Users/mac/Portfolio26/.claude/worktrees/determined-albattani-d50059 status)",
+      "Bash(git -C /Users/mac/Portfolio26/.claude/worktrees/determined-albattani-d50059 log --oneline -5)"
     ]
   }
 }

@@ -46,15 +46,16 @@ export default function Gallery() {
         className="md:hidden w-full overflow-x-auto bg-white dark:bg-[#0D0D0D] transition-colors duration-200 py-10"
         style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch", scrollbarWidth: "none" }}
       >
-        <div style={{ display: "flex", gap: 12, paddingLeft: 24, paddingRight: 24, width: "max-content" }}>
+        <div style={{ display: "flex", alignItems: "flex-start", gap: 12, paddingLeft: 24, paddingRight: 24, width: "max-content" }}>
           {galleryGroups.map((group) =>
             group.type === "web" ? (
               <div
                 key={group.id}
                 className="bg-[#F8F8F8] dark:bg-white/[0.06] transition-colors duration-200"
                 style={{
+                  height: 287,
                   borderRadius: 20,
-                  padding: 12,
+                  padding: 16,
                   overflow: "hidden",
                   flexShrink: 0,
                   scrollSnapAlign: "start",
@@ -67,7 +68,7 @@ export default function Gallery() {
                     alt={img.alt}
                     draggable={false}
                     decoding="async"
-                    style={{ width: 295, height: 210, display: "block", objectFit: "cover", objectPosition: "top left", borderRadius: 10 }}
+                    style={{ height: "100%", width: "auto", display: "block", borderRadius: 10 }}
                   />
                 ))}
               </div>
