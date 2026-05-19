@@ -101,7 +101,7 @@ export default function AcMobilityPage() {
       <Navbar />
 
       {/* ── Back bar ─────────────────────────────────────────────────────── */}
-      <div className="w-full flex items-center px-[114px] h-[44px]">
+      <div className="w-full flex items-center px-6 md:px-[114px] h-[44px]">
         <Link href="/" className="flex items-center gap-3 group">
           <span className="flex items-center justify-center w-10 h-10 rounded-full outline outline-1 outline-[#E4E4E4] dark:outline-white/10">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -123,10 +123,10 @@ export default function AcMobilityPage() {
       {/* ── Two-column layout ─────────────────────────────────────────────── */}
       {/*  1512px page · 114px side padding → 1284px inner             */}
       {/*  sidebar 160px + gap 276px + sections 848px = 1284px          */}
-      <div className="flex-1 flex flex-row px-[114px] pt-16 pb-24 gap-[276px]">
+      <div className="flex-1 flex flex-col min-[1512px]:flex-row px-6 md:px-[114px] pt-8 md:pt-16 pb-8 md:pb-16 gap-0 min-[1512px]:gap-[276px]">
 
-        {/* ── Sticky sidebar ──────────────────────────────────────────────── */}
-        <aside className="w-[160px] flex-shrink-0 sticky top-[136px] h-fit flex flex-col gap-5">
+        {/* ── Sticky sidebar — desktop only ───────────────────────────────── */}
+        <aside className="hidden min-[1512px]:flex w-[160px] flex-shrink-0 sticky top-[136px] h-fit flex-col gap-5">
           {navItems.map(({ id, label }) => {
             const active = activeId === id;
             return (
@@ -151,10 +151,10 @@ export default function AcMobilityPage() {
         </aside>
 
         {/* ── Main sections ────────────────────────────────────────────────── */}
-        <div className="w-[848px] flex flex-col">
+        <div className="w-full min-[1512px]:w-[848px] flex flex-col">
 
           {/* ══ 1. Overview ══════════════════════════════════════════════════ */}
-          <section id="overview" className="flex flex-col gap-6 pb-16 scroll-mt-40">
+          <section id="overview" className="flex flex-col gap-6 pb-10 md:pb-16 scroll-mt-20 md:scroll-mt-40">
             <h2 className="text-[20px] font-semibold leading-[1.3] tracking-[-0.01em] text-[#333333] dark:text-white">
               1. Overview
             </h2>
@@ -173,7 +173,7 @@ export default function AcMobilityPage() {
             </p>
 
             {/* Metrics row */}
-            <div className="flex flex-row gap-8">
+            <div className="flex flex-row flex-wrap gap-x-8 gap-y-5">
               {metrics.map(({ value, label }) => (
                 <div key={label} className="flex flex-col gap-1">
                   <span className="text-[22px] font-semibold leading-[1.2] tracking-[-0.02em] text-[#333333] dark:text-white">
@@ -188,7 +188,7 @@ export default function AcMobilityPage() {
           </section>
 
           {/* ══ 2. The System ════════════════════════════════════════════════ */}
-          <section id="the-system" className="flex flex-col gap-6 pb-16 scroll-mt-40">
+          <section id="the-system" className="flex flex-col gap-6 pb-10 md:pb-16 scroll-mt-20 md:scroll-mt-40">
             <h2 className="text-[20px] font-semibold leading-[1.3] tracking-[-0.01em] text-[#333333] dark:text-white">
               2. The System
             </h2>
@@ -210,7 +210,7 @@ export default function AcMobilityPage() {
           </section>
 
           {/* ══ 3. Three Decisions That Shaped the System ════════════════════ */}
-          <section id="design-decisions" className="flex flex-col gap-8 pb-16 scroll-mt-40">
+          <section id="design-decisions" className="flex flex-col gap-8 pb-10 md:pb-16 scroll-mt-20 md:scroll-mt-40">
             <h2 className="text-[20px] font-semibold leading-[1.3] tracking-[-0.01em] text-[#333333] dark:text-white">
               3. Decisions That Shaped the System
             </h2>
@@ -227,14 +227,14 @@ export default function AcMobilityPage() {
                   {/* Screenshot — only rendered when image is provided */}
                   {image && (
                     <div className="flex flex-col gap-3">
-                      <div className="w-full rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] p-6">
+                      <div className="w-full rounded-2xl md:rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] p-2">
                         <Image
                           src={image}
                           alt={phrase}
                           width={4320}
                           height={3072}
                           unoptimized
-                          className="w-full h-auto rounded-2xl"
+                          className="w-full h-auto rounded-lg md:rounded-2xl"
                         />
                       </div>
                       {caption && (
@@ -250,13 +250,13 @@ export default function AcMobilityPage() {
           </section>
 
           {/* ══ 4. Platform Spotlights ═══════════════════════════════════════ */}
-          <section id="platform-spotlights" className="flex flex-col gap-12 pb-16 scroll-mt-40">
+          <section id="platform-spotlights" className="flex flex-col gap-12 pb-10 md:pb-16 scroll-mt-20 md:scroll-mt-40">
             <h2 className="text-[20px] font-semibold leading-[1.3] tracking-[-0.01em] text-[#333333] dark:text-white">
               4. Platform Spotlights
             </h2>
 
             {/* 4.1 E-Ticketing Platform — web dashboard */}
-            <div id="e-ticketing" className="flex flex-col gap-4 scroll-mt-40">
+            <div id="e-ticketing" className="flex flex-col gap-4 scroll-mt-20 md:scroll-mt-40">
               <p className="text-[14px] leading-[22px] font-medium text-[#888888]">
                 <strong className="font-semibold text-[#333333] dark:text-white">
                   4.1. E-Ticketing Platform (Web · Operations core)
@@ -266,8 +266,8 @@ export default function AcMobilityPage() {
                 overwhelmed by system complexity.
               </p>
               <div className="flex flex-col gap-3">
-                <div className="w-full rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] p-6">
-                  <div className="relative w-full overflow-hidden rounded-2xl" style={{ height: 480 }}>
+                <div className="w-full rounded-2xl md:rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] p-2">
+                  <div className="relative w-full overflow-hidden rounded-lg md:rounded-2xl h-[200px] lg:h-[480px]">
                     <Image
                       src="/images/case-studies/ac-mobility/e-ticketing-dashboard.png"
                       alt="AC Mobility e-ticketing operations dashboard"
@@ -285,7 +285,7 @@ export default function AcMobilityPage() {
             </div>
 
             {/* 4.2 POS Terminal */}
-            <div id="agent-pos" className="flex flex-col gap-4 scroll-mt-40">
+            <div id="agent-pos" className="flex flex-col gap-4 scroll-mt-20 md:scroll-mt-40">
               <p className="text-[14px] leading-[22px] font-medium text-[#888888]">
                 <strong className="font-semibold text-[#333333] dark:text-white">
                   4.2. POS Terminal (Android · Agent-facing)
@@ -305,7 +305,7 @@ export default function AcMobilityPage() {
             </div>
 
             {/* 4.3 Tap&Go */}
-            <div id="tap-go" className="flex flex-col gap-4 scroll-mt-40">
+            <div id="tap-go" className="flex flex-col gap-4 scroll-mt-20 md:scroll-mt-40">
               <p className="text-[14px] leading-[22px] font-medium text-[#888888]">
                 <strong className="font-semibold text-[#333333] dark:text-white">
                   4.3. Tap&Go (Android, iOS, Web · Consumer)
@@ -325,7 +325,7 @@ export default function AcMobilityPage() {
             </div>
 
             {/* 4.4 USSD */}
-            <div id="ussd" className="flex flex-col gap-4 scroll-mt-40">
+            <div id="ussd" className="flex flex-col gap-4 scroll-mt-20 md:scroll-mt-40">
               <p className="text-[14px] leading-[22px] font-medium text-[#888888]">
                 <strong className="font-semibold text-[#333333] dark:text-white">
                   4.4. USSD (Consumer)
@@ -345,7 +345,7 @@ export default function AcMobilityPage() {
             </div>
 
             {/* 4.5 Inspector App */}
-            <div id="inspector-app" className="flex flex-col gap-4 scroll-mt-40">
+            <div id="inspector-app" className="flex flex-col gap-4 scroll-mt-20 md:scroll-mt-40">
               <p className="text-[14px] leading-[22px] font-medium text-[#888888]">
                 <strong className="font-semibold text-[#333333] dark:text-white">
                   4.5. Inspector App (Android · Field)
@@ -365,7 +365,7 @@ export default function AcMobilityPage() {
           </section>
 
           {/* ══ 5. Outcomes ══════════════════════════════════════════════════ */}
-          <section id="outcome" className="flex flex-col gap-6 pb-16 scroll-mt-40">
+          <section id="outcome" className="flex flex-col gap-6 pb-10 md:pb-16 scroll-mt-20 md:scroll-mt-40">
             <h2 className="text-[20px] font-semibold leading-[1.3] tracking-[-0.01em] text-[#333333] dark:text-white">
               5. Outcomes
             </h2>
@@ -397,24 +397,25 @@ export default function AcMobilityPage() {
 function PhoneRow({ images, caption }: { images: { src: string; alt: string }[]; caption?: string }) {
   return (
     <div className="flex flex-col gap-3">
-      <div className="w-full rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] flex flex-row gap-6 p-8 overflow-hidden">
-        {images.map(({ src, alt }) => (
-          <div
-            key={src + alt}
-            className="relative overflow-hidden rounded-[28px] flex-shrink-0"
-            style={{ width: 240, height: 494 }}
-          >
-            <Image
-              src={src}
-              alt={alt}
-              fill
-              sizes="(min-resolution: 2dppx) 960px, 480px"
-              unoptimized
-              className="object-cover object-top"
-              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
-            />
-          </div>
-        ))}
+      <div className="w-full rounded-2xl md:rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] p-2">
+        <div className="flex flex-row gap-2 lg:gap-6 w-full">
+          {images.map(({ src, alt }) => (
+            <div
+              key={src + alt}
+              className="relative overflow-hidden rounded-xl lg:rounded-[28px] flex-1 h-[200px] lg:flex-none lg:w-[240px] lg:h-[494px]"
+            >
+              <Image
+                src={src}
+                alt={alt}
+                fill
+                sizes="(min-resolution: 2dppx) 960px, 480px"
+                unoptimized
+                className="object-cover object-top"
+                onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+              />
+            </div>
+          ))}
+        </div>
       </div>
       {caption && (
         <p className="text-center text-[14px] font-medium text-[#888888]">{caption}</p>
@@ -436,7 +437,7 @@ function SystemDiagram() {
           width={2544}
           height={1463}
           unoptimized
-          className="w-full h-auto rounded-2xl dark:hidden"
+          className="w-full h-auto rounded-lg md:rounded-2xl dark:hidden"
         />
         {/* Dark mode — force visible with !important to beat hidden's specificity */}
         <Image
@@ -445,7 +446,7 @@ function SystemDiagram() {
           width={2544}
           height={1463}
           unoptimized
-          className="w-full h-auto rounded-2xl hidden dark:!block"
+          className="w-full h-auto rounded-lg md:rounded-2xl hidden dark:!block"
         />
       </div>
       <p className="text-center text-[14px] font-medium text-[#888888]">

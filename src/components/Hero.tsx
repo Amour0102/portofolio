@@ -12,7 +12,7 @@ export default function Hero() {
 
       <p className="text-[14px] font-medium leading-[22px] text-[#333333] dark:text-white/80">
         I lead design at{" "}
-        <span className="underline underline-offset-2 cursor-default">
+        <span className="cursor-default">
           AC Mobility
         </span>
         , building transportation infrastructure that moves 2 million+ commuters

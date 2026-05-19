@@ -11,7 +11,7 @@ export default function Home() {
 
       <main className="flex-1 flex flex-col items-center">
         {/* Hero — 80px top on desktop, 24px on mobile; 64px bottom */}
-        <div className="w-full flex justify-center px-6 md:px-0 pt-6 md:pt-[80px] pb-[40px] md:pb-[64px]">
+        <div className="w-full flex justify-center px-6 md:px-0 pt-6 md:pt-[80px] pb-6 md:pb-[64px]">
           <Hero />
         </div>
 
