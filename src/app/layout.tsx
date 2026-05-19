@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Inter, Arizonia } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import {
+  getSiteUrl,
+  SOCIAL_THUMBNAIL,
+  SOCIAL_THUMBNAIL_HEIGHT,
+  SOCIAL_THUMBNAIL_WIDTH,
+} from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -17,6 +23,7 @@ const arizonia = Arizonia({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(getSiteUrl()),
   title: "Cyusa Amour — Product Designer",
   description:
     "Product designer building transportation infrastructure and language preservation tools. Based in Kigali.",
@@ -33,6 +40,29 @@ export const metadata: Metadata = {
     description:
       "Product designer building transportation infrastructure and language preservation tools.",
     type: "website",
+    images: [
+      {
+        url: SOCIAL_THUMBNAIL,
+        width: SOCIAL_THUMBNAIL_WIDTH,
+        height: SOCIAL_THUMBNAIL_HEIGHT,
+        type: "image/png",
+        alt: "Cyusa Amour — Product Designer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cyusa Amour — Product Designer",
+    description:
+      "Product designer building transportation infrastructure and language preservation tools.",
+    images: [
+      {
+        url: SOCIAL_THUMBNAIL,
+        width: SOCIAL_THUMBNAIL_WIDTH,
+        height: SOCIAL_THUMBNAIL_HEIGHT,
+        alt: "Cyusa Amour — Product Designer",
+      },
+    ],
   },
 };
 

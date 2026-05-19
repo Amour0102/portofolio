@@ -1,10 +1,14 @@
 export type GalleryImage = {
   src: string;
   alt: string;
+  /** Intrinsic pixel size of the source file — used for web shots served without compression */
+  width?: number;
+  height?: number;
 };
 
 export type GalleryGroup = {
   id: string;
+  type?: "phone" | "web";
   images: GalleryImage[];
 };
 
@@ -18,8 +22,8 @@ export type Project = {
   href: string;
 };
 
-// Gallery groups match Paper design exactly — 5 rounded #F8F8F8 cards, each
-// with its own set of phones. Order and grouping follow the Paper canvas.
+// Gallery groups match Paper Home(Light) — phone cards (40px pad, 240×494)
+// and web cards (16px pad, 759×540). Order follows Paper frames 1–11.
 export const galleryGroups: GalleryGroup[] = [
   {
     id: "group-1",
@@ -56,6 +60,48 @@ export const galleryGroups: GalleryGroup[] = [
     images: [
       { src: "/images/gallery/2J-0.png", alt: "VugoGo – map view" },
       { src: "/images/gallery/2K-0.png", alt: "VugoGo – sidebar" },
+    ],
+  },
+  {
+    id: "group-6",
+    type: "web",
+    images: [
+      { src: "/images/gallery/1S-0.png", alt: "GovConnect – citizen dashboard", width: 4320, height: 3072 },
+    ],
+  },
+  {
+    id: "group-7",
+    type: "web",
+    images: [
+      { src: "/images/gallery/1U-0.png", alt: "GovConnect – dashboard variant", width: 4320, height: 3072 },
+    ],
+  },
+  {
+    id: "group-8",
+    images: [
+      { src: "/images/gallery/1Q-0.png", alt: "App screen – 1Q" },
+      { src: "/images/gallery/2Q-0.png", alt: "App screen – 2Q" },
+    ],
+  },
+  {
+    id: "group-9",
+    type: "web",
+    images: [
+      { src: "/images/gallery/1R-0.png", alt: "Project management tool", width: 4326, height: 3078 },
+    ],
+  },
+  {
+    id: "group-10",
+    type: "web",
+    images: [
+      { src: "/images/gallery/1T-0.png", alt: "Video conferencing interface", width: 4326, height: 3078 },
+    ],
+  },
+  {
+    id: "group-11",
+    images: [
+      { src: "/images/gallery/1P-0.png", alt: "App screen – 1P" },
+      { src: "/images/gallery/2P-0.png", alt: "App screen – 2P" },
     ],
   },
 ];
