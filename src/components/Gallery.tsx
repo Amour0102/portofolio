@@ -39,62 +39,39 @@ export default function Gallery() {
   }, [scrollDist]);
 
   return (
-    <div
-      ref={outerRef}
-      className="w-full"
-      style={{ height: `calc(100vh + ${scrollDist}px)` }}
-    >
+    <>
+      {/* ── Mobile: native horizontal swipe ── */}
       <div
-        ref={stickyRef}
         aria-label="Work samples gallery"
-        className="w-full overflow-hidden bg-white dark:bg-[#0D0D0D] transition-colors duration-200"
-        style={{
-          position: "sticky",
-          top: 0,
-          height: "100vh",
-          display: "flex",
-          alignItems: "center",
-        }}
+        className="md:hidden w-full overflow-x-auto bg-white dark:bg-[#0D0D0D] transition-colors duration-200 py-10"
+        style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch", scrollbarWidth: "none" }}
       >
-        <div
-          ref={trackRef}
-          style={{ display: "flex", gap: 24, width: "max-content", willChange: "transform" }}
-        >
+        <div style={{ display: "flex", gap: 12, paddingLeft: 24, paddingRight: 24, width: "max-content" }}>
           {galleryGroups.map((group) =>
             group.type === "web" ? (
-              // Web app screenshots — Paper frames 6/7/9/10: 791×574 card, 16px pad, 759×540 image
               <div
                 key={group.id}
                 className="bg-[#F8F8F8] dark:bg-white/[0.06] transition-colors duration-200"
                 style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: 24,
-                  padding: 16,
-                  borderRadius: 24,
-                  height: 574,
+                  borderRadius: 20,
+                  padding: 12,
                   overflow: "hidden",
                   flexShrink: 0,
+                  scrollSnapAlign: "start",
                 }}
               >
                 {group.images.map((img) => (
-                  // Native img — serves original PNG from /public with no Next.js optimization
                   <img
                     key={img.src}
                     src={img.src}
                     alt={img.alt}
-                    width={img.width}
-                    height={img.height}
-                    className="block shrink-0 object-cover object-center"
-                    style={{ width: 759, height: 540 }}
                     draggable={false}
                     decoding="async"
+                    style={{ width: 295, height: 210, display: "block", objectFit: "cover", objectPosition: "top left", borderRadius: 10 }}
                   />
                 ))}
               </div>
             ) : (
-              // Phone screenshots — rounded card with bg
               <div
                 key={group.id}
                 className="bg-[#F8F8F8] dark:bg-white/10 transition-colors duration-200"
@@ -102,23 +79,21 @@ export default function Gallery() {
                   display: "flex",
                   flexDirection: "row",
                   alignItems: "center",
-                  gap: 24,
-                  padding: 40,
-                  borderRadius: 24,
+                  gap: 12,
+                  padding: 20,
+                  borderRadius: 20,
                   overflow: "hidden",
                   flexShrink: 0,
+                  scrollSnapAlign: "start",
                 }}
               >
                 {group.images.map((img) => (
-                  <div
-                    key={img.src}
-                    style={{ position: "relative", width: 240, height: 494, flexShrink: 0 }}
-                  >
+                  <div key={img.src} style={{ position: "relative", width: 120, height: 247, flexShrink: 0 }}>
                     <Image
                       src={img.src}
                       alt={img.alt}
                       fill
-                      sizes="(min-resolution: 2dppx) 960px, 480px"
+                      sizes="240px"
                       unoptimized
                       className="object-cover"
                       draggable={false}
@@ -130,6 +105,97 @@ export default function Gallery() {
           )}
         </div>
       </div>
-    </div>
+
+      {/* ── Desktop: scroll-driven horizontal pan ── */}
+      <div
+        ref={outerRef}
+        className="hidden md:block w-full"
+        style={{ height: `calc(100vh + ${scrollDist}px)` }}
+      >
+        <div
+          ref={stickyRef}
+          aria-label="Work samples gallery"
+          className="w-full overflow-hidden bg-white dark:bg-[#0D0D0D] transition-colors duration-200"
+          style={{
+            position: "sticky",
+            top: 0,
+            height: "100vh",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <div
+            ref={trackRef}
+            style={{ display: "flex", gap: 24, width: "max-content", willChange: "transform" }}
+          >
+            {galleryGroups.map((group) =>
+              group.type === "web" ? (
+                <div
+                  key={group.id}
+                  className="bg-[#F8F8F8] dark:bg-white/[0.06] transition-colors duration-200"
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: 24,
+                    padding: 16,
+                    borderRadius: 24,
+                    height: 574,
+                    overflow: "hidden",
+                    flexShrink: 0,
+                  }}
+                >
+                  {group.images.map((img) => (
+                    <img
+                      key={img.src}
+                      src={img.src}
+                      alt={img.alt}
+                      width={img.width}
+                      height={img.height}
+                      className="block shrink-0 object-cover object-center"
+                      style={{ width: 759, height: 540 }}
+                      draggable={false}
+                      decoding="async"
+                    />
+                  ))}
+                </div>
+              ) : (
+                <div
+                  key={group.id}
+                  className="bg-[#F8F8F8] dark:bg-white/10 transition-colors duration-200"
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: 24,
+                    padding: 40,
+                    borderRadius: 24,
+                    overflow: "hidden",
+                    flexShrink: 0,
+                  }}
+                >
+                  {group.images.map((img) => (
+                    <div
+                      key={img.src}
+                      style={{ position: "relative", width: 240, height: 494, flexShrink: 0 }}
+                    >
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        sizes="(min-resolution: 2dppx) 960px, 480px"
+                        unoptimized
+                        className="object-cover"
+                        draggable={false}
+                      />
+                    </div>
+                  ))}
+                </div>
+              )
+            )}
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

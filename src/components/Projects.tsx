@@ -49,8 +49,7 @@ export default function Projects() {
           >
             {/* 4R-0: 576×440, border-radius 24px, overflow clip */}
             <div
-              className="relative w-full overflow-hidden rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#F2F2F2] dark:outline-white/[0.08] transition-[transform,box-shadow] duration-300 ease-out group-hover:-translate-y-[3px] group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
-              style={{ height: 440 }}
+              className="relative w-full overflow-hidden rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#F2F2F2] dark:outline-white/[0.08] transition-[transform,box-shadow] duration-300 ease-out group-hover:-translate-y-[3px] group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:group-hover:shadow-[0_8px_32px_rgba(0,0,0,0.3)] h-[260px] md:h-[440px]"
             >
               <Image
                 src={project.image}
