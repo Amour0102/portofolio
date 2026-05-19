@@ -138,7 +138,7 @@ export default function Gallery() {
   if (useCompactSticky) {
     return (
       <section
-        className="w-full py-4 relative"
+        className="w-full py-4"
         aria-label="Work samples gallery section"
       >
         <div
@@ -161,11 +161,6 @@ export default function Gallery() {
             <GalleryCards metrics={metrics} snapAlign />
           </div>
         </div>
-        {/* Right-edge fade — swipe affordance */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute right-0 top-0 bottom-0 w-14 bg-gradient-to-l from-white dark:from-[#0D0D0D] to-transparent"
-        />
       </section>
     );
   }

@@ -13,11 +13,7 @@ export default function Hero() {
       </div>
 
       <p className="text-[14px] font-medium leading-[22px] text-[#333333] dark:text-white/80">
-        I lead design at{" "}
-        <span className="underline underline-offset-2 cursor-default">
-          AC Mobility
-        </span>
-        , building transportation infrastructure that moves 2 million+ commuters
+        I lead design at AC Mobility, building transportation infrastructure that moves 6 million+ commuters
         daily across mobile, web, USSD, and field terminals. I also shipped{" "}
         <a
           href="https://voit.io"
