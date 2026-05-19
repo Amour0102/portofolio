@@ -227,7 +227,7 @@ export default function AcMobilityPage() {
                   {/* Screenshot — only rendered when image is provided */}
                   {image && (
                     <div className="flex flex-col gap-3">
-                      <div className="w-full rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] p-4">
+                      <div className="w-full rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] p-2">
                         <Image
                           src={image}
                           alt={phrase}
@@ -266,7 +266,7 @@ export default function AcMobilityPage() {
                 overwhelmed by system complexity.
               </p>
               <div className="flex flex-col gap-3">
-                <div className="w-full rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] p-4">
+                <div className="w-full rounded-3xl bg-[#F8F8F8] dark:bg-white/[0.06] outline outline-1 outline-[#EEEEEE] dark:outline-white/[0.08] p-2">
                   <div className="relative w-full overflow-hidden rounded-2xl h-[200px] md:h-[480px]">
                     <Image
                       src="/images/case-studies/ac-mobility/e-ticketing-dashboard.png"
