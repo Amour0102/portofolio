@@ -66,10 +66,11 @@ export const homeProjects: HomeProject[] = [
     client: "Orla3",
     description:
       "Designing the marketplace where booking a videographer means putting money on the line",
-    image: "/images/projects/v2/orla3.png",
+    image: "/images/case-studies/orla3/feed.png",
     width: 590,
     height: 420,
     href: "/work/orla3",
+    surfaceClass: "bg-[#F8F8F8] dark:bg-white/[0.04]",
   },
 ];
 
