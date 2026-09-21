@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Arizonia } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import {
   getSiteUrl,
   SOCIAL_THUMBNAIL,
@@ -79,6 +81,8 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           {children}
         </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
