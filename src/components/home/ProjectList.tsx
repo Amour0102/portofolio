@@ -29,7 +29,7 @@ function ProjectItem({ project: p, priority }: { project: HomeProject; priority?
     >
       <Image
         src={p.image}
-        alt={`${p.client} - ${p.description}`}
+        alt={`${p.client}, ${p.description}`}
         width={p.width * 2}
         height={p.height * 2}
         unoptimized

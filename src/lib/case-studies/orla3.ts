@@ -27,10 +27,10 @@ export const orla3 = {
   ] as MetaRow[],
 
   visuals: [
-    { kind: "web", image: { src: "/images/case-studies/orla3/orla3-1.png", alt: "Orla3 - feed with a videographer showcase" }, ratio: "816 / 581", caption: "Discovering a videographer - showreel, price range, and availability." },
-    { kind: "web", image: { src: "/images/case-studies/orla3/orla3-2.png", alt: "Orla3 - chat with delivery preview and booking details" }, ratio: "816 / 580", caption: "Delivery arrives in chat, with the booking details alongside." },
-    { kind: "web", image: { src: "/images/case-studies/orla3/orla3-3.png", alt: "Orla3 - requesting amendments in chat" }, ratio: "817 / 581", caption: "Requesting amendments before the work is accepted." },
-    { kind: "web", image: { src: "/images/case-studies/orla3/orla3-4.png", alt: "Orla3 - confirm and pay with escrow" }, ratio: "816 / 580", caption: "Confirm and pay - the fee held in escrow until handover." },
+    { kind: "web", image: { src: "/images/case-studies/orla3/orla3-1.png", alt: "Orla3, feed with a videographer showcase" }, ratio: "816 / 581", caption: "Discovering a videographer; showreel, price range, and availability." },
+    { kind: "web", image: { src: "/images/case-studies/orla3/orla3-2.png", alt: "Orla3, chat with delivery preview and booking details" }, ratio: "816 / 580", caption: "Delivery arrives in chat, with the booking details alongside." },
+    { kind: "web", image: { src: "/images/case-studies/orla3/orla3-3.png", alt: "Orla3, requesting amendments in chat" }, ratio: "817 / 581", caption: "Requesting amendments before the work is accepted." },
+    { kind: "web", image: { src: "/images/case-studies/orla3/orla3-4.png", alt: "Orla3, confirm and pay with escrow" }, ratio: "816 / 580", caption: "Confirm and pay, the fee held in escrow until handover." },
   ] as VisualSection[],
 
   next: { label: "Next Case Study", href: "/work/ac-mobility" },

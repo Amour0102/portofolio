@@ -47,7 +47,7 @@ export const acMobility = {
       src: "/images/case-studies/ac-mobility/pos-design.mp4",
       ratio: "3022 / 2160",
       bordered: false,
-      caption: "The agent POS - selling a ticket, from trip details to issued receipt.",
+      caption: "The agent POS; selling a ticket, from trip details to issued receipt.",
     },
     {
       kind: "phones",

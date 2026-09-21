@@ -19,7 +19,7 @@ export function caseStudyMetadata({
   path: string;
 }): Metadata {
   const cleanTitle = title.replace(/\.$/, "");
-  const fullTitle = `${cleanTitle} - Cyusa Amour`;
+  const fullTitle = `${cleanTitle}, Cyusa Amour`;
   const url = `${getSiteUrl()}${path}`;
 
   return {

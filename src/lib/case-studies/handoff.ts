@@ -24,12 +24,12 @@ export const handoff = {
   ] as MetaRow[],
 
   visuals: [
-    { kind: "web", image: { src: "/images/case-studies/handoff/imagea.jpg", alt: "Handoff - the agent's task state made inspectable" }, ratio: "3326 / 2160", caption: "Correct the agent's understanding instead of re-explaining it in another prompt." },
-    { kind: "web", image: { src: "/images/case-studies/handoff/imageb.jpg", alt: "Handoff - the activity log of what the agent tried" }, ratio: "3326 / 2160", caption: "The whole task on one screen - held instructions become editable chips you fix in place." },
-    { kind: "web", image: { src: "/images/case-studies/handoff/imagec.jpg", alt: "Handoff - where the agent stopped and the human can continue" }, ratio: "3326 / 2160", caption: "One click from the stop card: three attempts, each result, and the agent's own hypothesis." },
-    { kind: "web", image: { src: "/images/case-studies/handoff/imaged.jpg", alt: "Handoff - a stopped task ready to hand off" }, ratio: "3326 / 2160", caption: "The causality trail - 'Copy log' exports it as plain text, a developer's screenshot made native." },
-    { kind: "web", image: { src: "/images/case-studies/handoff/imagee.jpg", alt: "Handoff - the Degrading state shaped by research" }, ratio: "3326 / 2160", caption: "The pause doesn't ask for trust; it shows the evidence that triggered it." },
-    { kind: "web", image: { src: "/images/case-studies/handoff/imagef.jpg", alt: "Handoff - task states and stop types" }, ratio: "3326 / 2160", caption: "The audit trail outlives the task - 'What did I allow?', answered after ship." },
+    { kind: "web", image: { src: "/images/case-studies/handoff/imagea.jpg", alt: "Handoff, the agent's task state made inspectable" }, ratio: "3326 / 2160", caption: "Correct the agent's understanding instead of re-explaining it in another prompt." },
+    { kind: "web", image: { src: "/images/case-studies/handoff/imageb.jpg", alt: "Handoff, the activity log of what the agent tried" }, ratio: "3326 / 2160", caption: "The whole task on one screen, held instructions become editable chips you fix in place." },
+    { kind: "web", image: { src: "/images/case-studies/handoff/imagec.jpg", alt: "Handoff, where the agent stopped and the human can continue" }, ratio: "3326 / 2160", caption: "One click from the stop card: three attempts, each result, and the agent's own hypothesis." },
+    { kind: "web", image: { src: "/images/case-studies/handoff/imaged.jpg", alt: "Handoff, a stopped task ready to hand off" }, ratio: "3326 / 2160", caption: "The causality trail; 'Copy log' exports it as plain text, a developer's screenshot made native." },
+    { kind: "web", image: { src: "/images/case-studies/handoff/imagee.jpg", alt: "Handoff, the Degrading state shaped by research" }, ratio: "3326 / 2160", caption: "The pause doesn't ask for trust; it shows the evidence that triggered it." },
+    { kind: "web", image: { src: "/images/case-studies/handoff/imagef.jpg", alt: "Handoff, task states and stop types" }, ratio: "3326 / 2160", caption: "The audit trail outlives the task; 'What did I allow?', answered after ship." },
   ] as VisualSection[],
 
   next: { label: "Next Case Study", href: "/work/voit" },
