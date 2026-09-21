@@ -38,9 +38,9 @@ export default function VisualSection({ section }: { section: Section }) {
           style={{ aspectRatio: section.ratio }}
         />
       ) : section.kind === "web" ? (
-        <div className="w-full rounded-[16px] bg-[#F8F8F8] p-4 dark:bg-white/[0.04]">
+        <div className="w-full rounded-[16px] bg-[#F8F8F8] p-4 dark:bg-white/[0.06]">
           <div
-            className="w-full overflow-hidden rounded-[16px] border-[0.5px] border-black/[0.06] dark:border-white/[0.08]"
+            className="w-full overflow-hidden rounded-[16px] border-[0.5px] border-black/[0.06] dark:border-white/[0.18]"
             style={{ aspectRatio: section.ratio ?? "816 / 580" }}
           >
             <Image
