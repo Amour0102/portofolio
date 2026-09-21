@@ -33,9 +33,10 @@ function ProjectItem({ project: p, priority }: { project: HomeProject; priority?
           ? `${p.surfaceClass} p-4`
           : "ring-1 ring-inset ring-[#efefef] dark:ring-white/[0.06]"
       }`}
-      style={{ aspectRatio: `${p.width} / ${p.height}` }}
     >
-      <div className={`h-full w-full overflow-hidden ${radius}`}>
+      {/* aspect-ratio lives on the image box (not the padded outer) so the
+          matted mat never crops the image via object-cover. */}
+      <div className={`w-full overflow-hidden ${radius}`} style={{ aspectRatio: `${p.width} / ${p.height}` }}>
         <Image
           src={p.image}
           alt={`${p.client}, ${p.description}`}
