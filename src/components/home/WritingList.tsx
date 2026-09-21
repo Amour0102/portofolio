@@ -19,7 +19,7 @@ export default function WritingList() {
                 {w.description}
               </span>
             </div>
-            <span className="shrink-0 whitespace-nowrap rounded-full border border-[#E4E4E4] px-2.5 py-1 text-[11px] font-medium uppercase tracking-wide text-[#888888] dark:border-white/[0.12]">
+            <span className="shrink-0 whitespace-nowrap text-[11px] font-medium uppercase tracking-wide text-[#888888]">
               Coming soon
             </span>
           </div>
