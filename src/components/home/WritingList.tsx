@@ -12,7 +12,7 @@ export default function WritingList() {
         {writingEntries.map((w) => (
           <div key={w.title} className="flex w-full items-center gap-4">
             <div className="flex w-full flex-col items-start gap-1">
-              <span className="text-[14px] font-medium leading-[18px] text-[#333333] dark:text-white">
+              <span className="text-[16px] font-medium leading-[22px] text-[#333333] dark:text-white">
                 {w.title}
               </span>
               <span className="text-[14px] font-medium leading-[18px] text-[#888888]">
