@@ -41,7 +41,11 @@ function ProjectItem({ project: p, priority }: { project: HomeProject; priority?
           height={p.height * 2}
           unoptimized
           priority={priority}
-          className={`h-full w-full ${radius} object-cover transition-transform duration-[650ms] ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100`}
+          className={`h-full w-full ${radius} object-cover ${
+            matted
+              ? ""
+              : "transition-transform duration-[650ms] ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+          }`}
         />
       </div>
     </div>
