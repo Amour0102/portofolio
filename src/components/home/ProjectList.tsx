@@ -20,8 +20,8 @@ export default function ProjectList() {
 
 function ProjectItem({ project: p, priority }: { project: HomeProject; priority?: boolean }) {
   // The media is its own hover group so the interaction fires on the thumbnail
-  // itself - a soft lift + shadow, with a slow inner zoom - for every project,
-  // linked or not.
+  // itself - a soft lift + shadow, with a slow inner zoom of the image - for
+  // every project, matted or not.
   // A matted card (themeable light/dark surface, 16px radius) frames a branded
   // or opaque image; otherwise the image fills a plain 24px card.
   const matted = Boolean(p.surfaceClass);
@@ -30,7 +30,7 @@ function ProjectItem({ project: p, priority }: { project: HomeProject; priority?
     <div
       className={`group relative w-full overflow-hidden ${radius} transition-[transform,box-shadow] duration-300 ease-out will-change-transform hover:-translate-y-1 hover:shadow-[0_16px_32px_-24px_rgba(17,42,80,0.22)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 ${
         matted
-          ? `${p.surfaceClass} p-4 hover:scale-[1.03] motion-reduce:hover:scale-100`
+          ? `${p.surfaceClass} p-4`
           : "ring-1 ring-inset ring-[#efefef] dark:ring-white/[0.06]"
       }`}
       style={{ aspectRatio: `${p.width} / ${p.height}` }}
@@ -43,11 +43,7 @@ function ProjectItem({ project: p, priority }: { project: HomeProject; priority?
           height={p.height * 2}
           unoptimized
           priority={priority}
-          className={`h-full w-full ${radius} object-cover ${
-            matted
-              ? ""
-              : "transition-transform duration-[650ms] ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-          }`}
+          className={`h-full w-full ${radius} object-cover transition-transform duration-[650ms] ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100`}
         />
       </div>
     </div>
