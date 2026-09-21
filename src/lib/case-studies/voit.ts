@@ -29,7 +29,7 @@ export const voit = {
 
   visuals: [
     // Explaining video - hosted on S3 and referenced directly (not committed to the repo).
-    { kind: "video", src: "https://voit-videos.s3.us-east-1.amazonaws.com/Explaning%20Video.mp4", ratio: "16 / 9", caption: "The system in motion, from foundations to finished screens." },
+    { kind: "video", src: "https://voit-videos.s3.us-east-1.amazonaws.com/Explaning%20Video.mp4", ratio: "16 / 9", controls: true, caption: "The system in motion, from foundations to finished screens." },
     { kind: "web", image: { src: "/images/case-studies/voit/component.png", alt: "Voit, Components library" }, ratio: "816 / 455", caption: "The Components library: buttons, inputs, and the building blocks." },
     { kind: "web", image: { src: "/images/case-studies/voit/blocks.png", alt: "Voit, Blocks library" }, ratio: "816 / 455", caption: "The Blocks layer, full-page compositions across 13 categories." },
     { kind: "web", image: { src: "/images/case-studies/voit/pattern.png", alt: "Voit, Pattern library: media, navigation, sections, and utilities" }, ratio: "1632 / 816", caption: "Patterns; the media, navigation, and utilities that hold the system together." },

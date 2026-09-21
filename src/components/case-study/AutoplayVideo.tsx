@@ -26,10 +26,12 @@ export default function AutoplayVideo({
   src,
   poster,
   className,
+  controls = false,
 }: {
   src: string;
   poster?: string;
   className?: string;
+  controls?: boolean;
 }) {
   const reduceMotion = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
@@ -38,7 +40,7 @@ export default function AutoplayVideo({
       className={className}
       autoPlay={!reduceMotion}
       loop={!reduceMotion}
-      controls={reduceMotion}
+      controls={controls || reduceMotion}
       muted
       playsInline
       preload="metadata"

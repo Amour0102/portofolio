@@ -14,7 +14,9 @@ export type VisualSection =
   // "16 / 9") reserves space to avoid layout shift; `poster` is an optional still.
   // `bordered` defaults to true - set false when the video's own background gives
   // the frame enough definition (e.g. a coloured landing recording).
-  | { kind: "video"; src: string; ratio: string; poster?: string; caption?: string; bordered?: boolean }
+  // `controls` shows the native player controls (default false) - use it for a
+  // heavy/remote clip that may not autoplay, so it stays playable.
+  | { kind: "video"; src: string; ratio: string; poster?: string; caption?: string; bordered?: boolean; controls?: boolean }
   // An empty surface reserved for a visual not yet placed. `ratio` is a CSS
   // aspect-ratio string, e.g. "848 / 562".
   | { kind: "placeholder"; ratio: string; caption?: string };

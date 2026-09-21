@@ -28,6 +28,7 @@ export default function VisualSection({ section }: { section: Section }) {
           <AutoplayVideo
             src={section.src}
             poster={section.poster}
+            controls={section.controls}
             className="h-full w-full object-cover"
           />
         </div>
