@@ -68,7 +68,7 @@ export const homeProjects: HomeProject[] = [
       "Designing the marketplace where booking a videographer means putting money on the line",
     image: "/images/projects/v2/orla3.png",
     width: 590,
-    height: 429,
+    height: 420,
     href: "/work/orla3",
   },
 ];
