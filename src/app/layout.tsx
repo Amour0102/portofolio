@@ -24,7 +24,7 @@ const arizonia = Arizonia({
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
-  title: "Cyusa Amour — Product Designer",
+  title: "Cyusa Amour - Product Designer",
   description:
     "Product designer building transportation infrastructure and language preservation tools. Based in Kigali.",
   icons: {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     other: { rel: "manifest", url: "/site.webmanifest" },
   },
   openGraph: {
-    title: "Cyusa Amour — Product Designer",
+    title: "Cyusa Amour - Product Designer",
     description:
       "Product designer building transportation infrastructure and language preservation tools.",
     type: "website",
@@ -46,13 +46,13 @@ export const metadata: Metadata = {
         width: SOCIAL_THUMBNAIL_WIDTH,
         height: SOCIAL_THUMBNAIL_HEIGHT,
         type: "image/png",
-        alt: "Cyusa Amour — Product Designer",
+        alt: "Cyusa Amour - Product Designer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cyusa Amour — Product Designer",
+    title: "Cyusa Amour - Product Designer",
     description:
       "Product designer building transportation infrastructure and language preservation tools.",
     images: [
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
         url: SOCIAL_THUMBNAIL,
         width: SOCIAL_THUMBNAIL_WIDTH,
         height: SOCIAL_THUMBNAIL_HEIGHT,
-        alt: "Cyusa Amour — Product Designer",
+        alt: "Cyusa Amour - Product Designer",
       },
     ],
   },

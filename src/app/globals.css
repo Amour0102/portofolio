@@ -5,6 +5,9 @@
 @theme inline {
   --font-sans: var(--font-inter);
   --font-script: var(--font-arizonia);
+  /* Homepage display face. Prefers PP Neue Montreal (the Paper source font) when
+     it is installed/served, and falls back to Inter everywhere else. */
+  --font-grotesk: "PP Neue Montreal", var(--font-inter), system-ui, sans-serif;
   --color-surface: #F8F8F8;
   --color-border: #EEEEEE;
   --color-muted: #888888;

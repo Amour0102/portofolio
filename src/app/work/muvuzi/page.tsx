@@ -2,25 +2,25 @@ import CaseStudyLayout from "@/components/case-study/CaseStudyLayout";
 import Overview from "@/components/case-study/Overview";
 import VisualSection from "@/components/case-study/VisualSection";
 import NextCaseStudy from "@/components/case-study/NextCaseStudy";
-import { acMobility } from "@/lib/case-studies/ac-mobility";
+import { muvuzi } from "@/lib/case-studies/muvuzi";
 import { caseStudyMetadata } from "@/lib/case-studies/metadata";
 
 export const metadata = caseStudyMetadata({
-  title: acMobility.title,
-  description: acMobility.summary,
-  path: "/work/ac-mobility",
+  title: muvuzi.title,
+  description: muvuzi.summary,
+  path: "/work/muvuzi",
 });
 
-export default function AcMobilityPage() {
+export default function MuvuziPage() {
   return (
     <CaseStudyLayout>
-      <Overview title={acMobility.title} intro={acMobility.intro} meta={acMobility.meta} />
+      <Overview title={muvuzi.title} intro={muvuzi.intro} meta={muvuzi.meta} />
 
-      {acMobility.visuals.map((section, i) => (
+      {muvuzi.visuals.map((section, i) => (
         <VisualSection key={i} section={section} />
       ))}
 
-      <NextCaseStudy href={acMobility.next.href} label={acMobility.next.label} />
+      <NextCaseStudy href={muvuzi.next.href} label={muvuzi.next.label} />
     </CaseStudyLayout>
   );
 }

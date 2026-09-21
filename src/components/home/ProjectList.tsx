@@ -1,0 +1,66 @@
+import Image from "next/image";
+import Link from "next/link";
+import { homeProjects, HomeProject } from "@/lib/home-data";
+
+// "Projects" section - a stacked list of media + caption blocks.
+export default function ProjectList() {
+  return (
+    <section className="mx-auto flex w-full max-w-[590px] flex-col items-start gap-6">
+      <h2 className="text-[20px] font-medium leading-[26px] tracking-[-0.015em] text-[#333333] dark:text-white">
+        Projects
+      </h2>
+      <div className="flex w-full flex-col items-start gap-10">
+        {homeProjects.map((p, i) => (
+          <ProjectItem key={p.id} project={p} priority={i === 0} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ProjectItem({ project: p, priority }: { project: HomeProject; priority?: boolean }) {
+  // The media is its own hover group so the interaction fires on the thumbnail
+  // itself - a soft lift + shadow, with a slow inner zoom - for every project,
+  // linked or not.
+  const media = (
+    <div
+      className="group relative w-full overflow-hidden rounded-[24px] ring-1 ring-inset ring-[#efefef] transition-[transform,box-shadow] duration-300 ease-out will-change-transform hover:-translate-y-1 hover:shadow-[0_16px_32px_-24px_rgba(17,42,80,0.22)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:ring-white/[0.06]"
+      style={{ aspectRatio: `${p.width} / ${p.height}` }}
+    >
+      <Image
+        src={p.image}
+        alt={`${p.client} - ${p.description}`}
+        width={p.width * 2}
+        height={p.height * 2}
+        unoptimized
+        priority={priority}
+        className="h-full w-full rounded-[24px] object-cover transition-transform duration-[650ms] ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+      />
+    </div>
+  );
+
+  const caption = (
+    <div className="flex w-full max-w-[576px] flex-col items-start gap-2">
+      <span className="text-[16px] font-medium leading-[20px] text-[#888888]">{p.client}</span>
+      <p className="text-[20px] font-medium leading-[26px] tracking-[-0.015em] text-[#333333] dark:text-white">
+        {p.description}
+      </p>
+    </div>
+  );
+
+  if (p.href) {
+    return (
+      <Link href={p.href} className="flex w-full flex-col items-start gap-4">
+        {media}
+        {caption}
+      </Link>
+    );
+  }
+
+  return (
+    <div className="flex w-full flex-col items-start gap-4">
+      {media}
+      {caption}
+    </div>
+  );
+}

@@ -2,25 +2,25 @@ import CaseStudyLayout from "@/components/case-study/CaseStudyLayout";
 import Overview from "@/components/case-study/Overview";
 import VisualSection from "@/components/case-study/VisualSection";
 import NextCaseStudy from "@/components/case-study/NextCaseStudy";
-import { acMobility } from "@/lib/case-studies/ac-mobility";
+import { handoff } from "@/lib/case-studies/handoff";
 import { caseStudyMetadata } from "@/lib/case-studies/metadata";
 
 export const metadata = caseStudyMetadata({
-  title: acMobility.title,
-  description: acMobility.summary,
-  path: "/work/ac-mobility",
+  title: handoff.title,
+  description: handoff.summary,
+  path: "/work/handoff",
 });
 
-export default function AcMobilityPage() {
+export default function HandoffPage() {
   return (
     <CaseStudyLayout>
-      <Overview title={acMobility.title} intro={acMobility.intro} meta={acMobility.meta} />
+      <Overview title={handoff.title} intro={handoff.intro} meta={handoff.meta} />
 
-      {acMobility.visuals.map((section, i) => (
+      {handoff.visuals.map((section, i) => (
         <VisualSection key={i} section={section} />
       ))}
 
-      <NextCaseStudy href={acMobility.next.href} label={acMobility.next.label} />
+      <NextCaseStudy href={handoff.next.href} label={handoff.next.label} />
     </CaseStudyLayout>
   );
 }
