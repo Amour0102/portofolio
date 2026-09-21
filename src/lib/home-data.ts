@@ -14,6 +14,12 @@ export type HomeProject = {
   height: number;
   /** Case-study link, when one exists. */
   href?: string;
+  /**
+   * Optional themeable surface for the thumbnail (light + dark background
+   * classes). When set, the card gets a padded mat and a 16px radius, so a
+   * branded/opaque image reads as framed and the mat follows light/dark mode.
+   */
+  surfaceClass?: string;
 };
 
 export const homeProjects: HomeProject[] = [
@@ -31,10 +37,11 @@ export const homeProjects: HomeProject[] = [
     client: "Muvuzi",
     description:
       "Designing the brand, website and product experience for a pharmacy platform built for everyday operations",
-    image: "/images/projects/v2/muvuzi.png",
+    image: "/images/case-studies/muvuzi/hero-section.png",
     width: 590,
-    height: 362,
+    height: 355,
     href: "/work/muvuzi",
+    surfaceClass: "bg-[#F8F9F7] dark:bg-white/[0.04]",
   },
   {
     id: "handoff",

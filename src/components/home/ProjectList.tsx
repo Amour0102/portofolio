@@ -22,20 +22,28 @@ function ProjectItem({ project: p, priority }: { project: HomeProject; priority?
   // The media is its own hover group so the interaction fires on the thumbnail
   // itself - a soft lift + shadow, with a slow inner zoom - for every project,
   // linked or not.
+  // A matted card (themeable light/dark surface, 16px radius) frames a branded
+  // or opaque image; otherwise the image fills a plain 24px card.
+  const matted = Boolean(p.surfaceClass);
+  const radius = matted ? "rounded-[16px]" : "rounded-[24px]";
   const media = (
     <div
-      className="group relative w-full overflow-hidden rounded-[24px] ring-1 ring-inset ring-[#efefef] transition-[transform,box-shadow] duration-300 ease-out will-change-transform hover:-translate-y-1 hover:shadow-[0_16px_32px_-24px_rgba(17,42,80,0.22)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:ring-white/[0.06]"
+      className={`group relative w-full overflow-hidden ${radius} ring-1 ring-inset ring-[#efefef] transition-[transform,box-shadow] duration-300 ease-out will-change-transform hover:-translate-y-1 hover:shadow-[0_16px_32px_-24px_rgba(17,42,80,0.22)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:ring-white/[0.06] ${
+        matted ? `${p.surfaceClass} p-3` : ""
+      }`}
       style={{ aspectRatio: `${p.width} / ${p.height}` }}
     >
-      <Image
-        src={p.image}
-        alt={`${p.client}, ${p.description}`}
-        width={p.width * 2}
-        height={p.height * 2}
-        unoptimized
-        priority={priority}
-        className="h-full w-full rounded-[24px] object-cover transition-transform duration-[650ms] ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-      />
+      <div className={`h-full w-full overflow-hidden ${radius}`}>
+        <Image
+          src={p.image}
+          alt={`${p.client}, ${p.description}`}
+          width={p.width * 2}
+          height={p.height * 2}
+          unoptimized
+          priority={priority}
+          className={`h-full w-full ${radius} object-cover transition-transform duration-[650ms] ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100`}
+        />
+      </div>
     </div>
   );
 
