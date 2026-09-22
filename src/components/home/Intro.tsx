@@ -9,12 +9,12 @@ export default function Intro() {
         <h1 className="text-[40px] font-medium leading-[48px] tracking-[-0.02em] text-[#333333] dark:text-white">
           Cyusa Amour
         </h1>
-        <p className="text-[16px] font-medium capitalize leading-[20px] text-[#888888]">
+        <p className="text-[16px] font-medium capitalize leading-[20px] text-[#767676] dark:text-[#888888]">
           Product Designer
         </p>
       </div>
 
-      <nav className="flex items-start gap-3 text-[#888888]" aria-label="Social links">
+      <nav className="flex items-start gap-3 text-[#767676] dark:text-[#888888]" aria-label="Social links">
         <a href={socials.linkedin} target="_blank" rel="noopener noreferrer"
           aria-label="LinkedIn" className="transition-opacity hover:opacity-70">
           <LinkedInIcon />

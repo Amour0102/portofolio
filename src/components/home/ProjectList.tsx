@@ -52,7 +52,7 @@ function ProjectItem({ project: p, priority }: { project: HomeProject; priority?
 
   const caption = (
     <div className="flex w-full max-w-[576px] flex-col items-start gap-2">
-      <span className="text-[16px] font-medium leading-[20px] text-[#888888]">{p.client}</span>
+      <span className="text-[16px] font-medium leading-[20px] text-[#767676] dark:text-[#888888]">{p.client}</span>
       <p className="text-[20px] font-medium leading-[26px] tracking-[-0.015em] text-[#333333] dark:text-white">
         {p.description}
       </p>

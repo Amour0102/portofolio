@@ -15,11 +15,11 @@ export default function WritingList() {
               <span className="text-[16px] font-medium leading-[22px] text-[#333333] dark:text-white">
                 {w.title}
               </span>
-              <span className="text-[14px] font-medium leading-[18px] text-[#888888]">
+              <span className="text-[14px] font-medium leading-[18px] text-[#767676] dark:text-[#888888]">
                 {w.description}
               </span>
             </div>
-            <span className="shrink-0 whitespace-nowrap text-[11px] font-medium uppercase tracking-wide text-[#888888]">
+            <span className="shrink-0 whitespace-nowrap text-[11px] font-medium uppercase tracking-wide text-[#767676] dark:text-[#888888]">
               Soon
             </span>
           </div>

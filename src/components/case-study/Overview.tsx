@@ -27,7 +27,7 @@ export default function Overview({
         <dl className="flex w-full flex-col gap-4 pt-2">
           {meta.map(({ label, value }) => (
             <div key={label} className="flex flex-col gap-1">
-              <dt className="text-[16px] font-medium leading-6 text-[#888888]">{label}</dt>
+              <dt className="text-[16px] font-medium leading-6 text-[#767676] dark:text-[#888888]">{label}</dt>
               <dd className="whitespace-pre-line text-[16px] font-medium leading-6 text-[#333333] dark:text-white">
                 {value}
               </dd>

@@ -79,7 +79,7 @@ export default function VisualSection({ section }: { section: Section }) {
       )}
 
       {caption && (
-        <figcaption className="text-center text-[14px] font-medium leading-5 text-[#888888]">
+        <figcaption className="text-center text-[14px] font-medium leading-5 text-[#767676] dark:text-[#888888]">
           {caption}
         </figcaption>
       )}

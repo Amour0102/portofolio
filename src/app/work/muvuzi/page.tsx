@@ -4,6 +4,7 @@ import VisualSection from "@/components/case-study/VisualSection";
 import NextCaseStudy from "@/components/case-study/NextCaseStudy";
 import { muvuzi } from "@/lib/case-studies/muvuzi";
 import { caseStudyMetadata } from "@/lib/case-studies/metadata";
+import CaseStudyJsonLd from "@/components/case-study/CaseStudyJsonLd";
 
 export const metadata = caseStudyMetadata({
   title: muvuzi.title,
@@ -14,6 +15,7 @@ export const metadata = caseStudyMetadata({
 export default function MuvuziPage() {
   return (
     <CaseStudyLayout>
+      <CaseStudyJsonLd title={muvuzi.title} description={muvuzi.summary} path="/work/muvuzi" />
       <Overview title={muvuzi.title} intro={muvuzi.intro} meta={muvuzi.meta} />
 
       {muvuzi.visuals.map((section, i) => (
