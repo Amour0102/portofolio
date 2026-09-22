@@ -1,9 +1,14 @@
+import type { Metadata } from "next";
 import SiteBar from "@/components/home/SiteBar";
 import Intro from "@/components/home/Intro";
 import ProjectList from "@/components/home/ProjectList";
 import MoreWork from "@/components/home/MoreWork";
 import WritingList from "@/components/home/WritingList";
 import About from "@/components/home/About";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (
