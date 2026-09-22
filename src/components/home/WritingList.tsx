@@ -1,7 +1,7 @@
 import { writingEntries } from "@/lib/home-data";
 
 // "Writing" section - a compact list of essays. The pieces aren't published yet,
-// so each row is non-interactive and carries a "Coming soon" label.
+// so each row is non-interactive and carries a "Soon" label.
 export default function WritingList() {
   return (
     <section className="mx-auto flex w-full max-w-[576px] flex-col items-start gap-5">
@@ -20,7 +20,7 @@ export default function WritingList() {
               </span>
             </div>
             <span className="shrink-0 whitespace-nowrap text-[11px] font-medium uppercase tracking-wide text-[#888888]">
-              Coming soon
+              Soon
             </span>
           </div>
         ))}
