@@ -21,8 +21,9 @@ export type HomeProject = {
    */
   surfaceClass?: string;
   /**
-   * Optional stronger ring color for a non-matted thumbnail whose image blends
-   * into the page (e.g. a white-background cover). Defaults to the faint ring.
+   * Optional border classes drawn on the image box of a non-matted thumbnail
+   * whose cover blends into the page (e.g. a white background). A real border is
+   * used (not the outer inset ring, which a full-bleed image paints over).
    */
   borderClass?: string;
 };
@@ -65,7 +66,7 @@ export const homeProjects: HomeProject[] = [
     width: 590,
     height: 287,
     href: "/work/voit",
-    borderClass: "ring-[#E4E4E4] dark:ring-white/[0.08]",
+    borderClass: "border-[0.5px] border-[#E4E4E4] dark:border-white/[0.08]",
   },
   {
     id: "orla3",

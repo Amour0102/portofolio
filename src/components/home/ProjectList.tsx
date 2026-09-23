@@ -31,12 +31,14 @@ function ProjectItem({ project: p, priority }: { project: HomeProject; priority?
       className={`group relative w-full overflow-hidden ${radius} transition-[transform,box-shadow] duration-300 ease-out will-change-transform hover:-translate-y-1 hover:shadow-[0_16px_32px_-24px_rgba(17,42,80,0.22)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 ${
         matted
           ? `${p.surfaceClass} p-4`
-          : `ring-1 ring-inset ${p.borderClass ?? "ring-[#efefef] dark:ring-white/[0.06]"}`
+          : "ring-1 ring-inset ring-[#efefef] dark:ring-white/[0.06]"
       }`}
     >
       {/* aspect-ratio lives on the image box (not the padded outer) so the
-          matted mat never crops the image via object-cover. */}
-      <div className={`w-full overflow-hidden ${radius}`} style={{ aspectRatio: `${p.width} / ${p.height}` }}>
+          matted mat never crops the image via object-cover. A per-project
+          borderClass draws a real border here (visible over a full-bleed image,
+          unlike the outer inset ring) for covers that blend into the page. */}
+      <div className={`w-full overflow-hidden ${radius} ${!matted && p.borderClass ? p.borderClass : ""}`} style={{ aspectRatio: `${p.width} / ${p.height}` }}>
         <Image
           src={p.image}
           alt={`${p.client}, ${p.description}`}
