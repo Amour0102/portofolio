@@ -42,3 +42,5 @@ next-env.d.ts
 *.mp4
 # …but keep case-study videos, which ship with the site
 !/public/images/case-studies/**/*.mp4
+# …and the homepage "More Work" reel
+!/public/images/more-work.mp4

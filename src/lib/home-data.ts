@@ -107,7 +107,9 @@ export const aboutParagraphs: string[] = [
 // "More Work" reel. A video is coming - when the file is ready, point `src` at it
 // (e.g. "/videos/more-work.mp4") and optionally set a `poster` still. While this is
 // null the section shows the placeholder surface from the Paper frame.
-export const moreWorkVideo: { src: string; poster?: string } | null = null;
+export const moreWorkVideo: { src: string; poster?: string } | null = {
+  src: "/images/more-work.mp4",
+};
 
 export const socials = {
   linkedin: "https://www.linkedin.com/in/cyusa-bahizi-amour-175a9a225/",
