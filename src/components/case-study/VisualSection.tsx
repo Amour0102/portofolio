@@ -56,14 +56,15 @@ export default function VisualSection({ section }: { section: Section }) {
           </div>
         </div>
       ) : (
-        <div className="w-full rounded-[16px] bg-[#F8F8F8] p-5 sm:p-10 dark:bg-white/[0.04]">
-          {/* Mobile: horizontal snap carousel so tall phone mockups stay legible
-              without a huge vertical scroll. sm+: a plain three-up grid. */}
-          <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] sm:grid sm:grid-cols-3 sm:gap-6 sm:overflow-x-visible sm:pb-0 [&::-webkit-scrollbar]:hidden">
+        <div className="w-full rounded-[16px] bg-[#F8F8F8] p-3 sm:p-10 dark:bg-white/[0.04]">
+          {/* A three-up grid at every width: all phone states are visible at once,
+              none cut off. Padding/gap/radius tighten on mobile so the three tall
+              mockups fit the narrow screen. */}
+          <div className="grid grid-cols-3 gap-2 sm:gap-6">
             {section.images.map((img) => (
               <div
                 key={img.src}
-                className="w-[78%] shrink-0 snap-start overflow-hidden rounded-[16px] sm:w-auto"
+                className="overflow-hidden rounded-[10px] sm:rounded-[16px]"
                 style={{ aspectRatio: "240 / 534" }}
               >
                 <Image
