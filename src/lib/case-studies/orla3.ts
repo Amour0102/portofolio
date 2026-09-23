@@ -31,7 +31,7 @@ export const orla3 = {
     // Keeps its frame (no bordered:false): this is a dark screenshot, so in dark
     // mode the border defines its edge against the near-black page instead of the
     // black content dissolving into it. The light/grey shots below stay borderless.
-    { kind: "web", image: { src: "/images/case-studies/orla3/orla3-1.png", alt: "Orla3, feed with a videographer showcase" }, ratio: "816 / 581", caption: "Discovering a videographer; showreel, price range, and availability." },
+    { kind: "web", image: { src: "/images/case-studies/orla3/feed.png", alt: "Orla3, feed with a videographer showcase" }, ratio: "4320 / 3072", caption: "Discovering a videographer; showreel, price range, and availability." },
     { kind: "web", image: { src: "/images/case-studies/orla3/location-time.png", alt: "Orla3, choosing shoot location, date, and estimated duration" }, ratio: "4320 / 3072", bordered: false, caption: "Pricing complexity stays behind a simpler question for the buyer." },
     { kind: "web", image: { src: "/images/case-studies/orla3/question1.png", alt: "Orla3, an open question about the video brief" }, ratio: "4320 / 3072", bordered: false, caption: "The brief begins as a plain question, not a form." },
     { kind: "web", image: { src: "/images/case-studies/orla3/payment.png", alt: "Orla3, confirm and pay with escrow and a full price breakdown" }, ratio: "4320 / 3072", bordered: false, caption: "The full financial commitment is visible before the buyer pays." },
