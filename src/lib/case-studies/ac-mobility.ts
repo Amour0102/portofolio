@@ -36,7 +36,8 @@ export const acMobility = {
   visuals: [
     {
       kind: "video",
-      src: "/images/case-studies/ac-mobility/e-ticketing.mp4",
+      src: "https://res.cloudinary.com/jsgwyynr/video/upload/f_auto,q_auto:best/v1790166800/e-ticketing.mp4",
+      poster: "https://res.cloudinary.com/jsgwyynr/video/upload/so_0/v1790166800/e-ticketing.jpg",
       ratio: "3036 / 2160",
       caption: "Operator dashboard, tickets, sales trips, activity overview",
     },
