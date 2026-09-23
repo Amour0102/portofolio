@@ -7,7 +7,9 @@ export type Shot = { src: string; alt: string };
 export type VisualSection =
   // One wide screenshot in a #F8F8F8 surface. `ratio` sets the aspect (default
   // "816 / 580"); `fit` the object-fit (default "cover"); `caption` is optional.
-  | { kind: "web"; image: Shot; caption?: string; ratio?: string; fit?: "cover" | "contain" }
+  // `bordered` defaults to true - set false when the image's own background is
+  // dark/coloured and reads fine on the surface without an outline.
+  | { kind: "web"; image: Shot; caption?: string; ratio?: string; fit?: "cover" | "contain"; bordered?: boolean }
   // Three phone screens side by side.
   | { kind: "phones"; images: Shot[]; caption?: string }
   // A muted, looping, full-bleed video in a rounded surface. `ratio` (e.g.

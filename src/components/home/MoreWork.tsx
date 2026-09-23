@@ -10,7 +10,7 @@ export default function MoreWork() {
         More Work
       </h2>
       <div
-        className="w-full overflow-hidden rounded-[24px] bg-[#F8F8F8] dark:bg-white/[0.04]"
+        className="w-full overflow-hidden rounded-[24px] border-[0.5px] border-[#E4E4E4] bg-[#F8F8F8] dark:border-white/[0.08] dark:bg-white/[0.04]"
         style={{ aspectRatio: "590 / 428" }}
         aria-label="Work reel"
       >
