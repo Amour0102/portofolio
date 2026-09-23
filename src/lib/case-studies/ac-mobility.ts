@@ -36,7 +36,7 @@ export const acMobility = {
   visuals: [
     {
       kind: "video",
-      src: "https://res.cloudinary.com/jsgwyynr/video/upload/f_auto,q_auto:best/v1790166800/e-ticketing.mp4",
+      src: "https://res.cloudinary.com/jsgwyynr/video/upload/q_auto:best/v1790166800/e-ticketing.mp4",
       poster: "https://res.cloudinary.com/jsgwyynr/video/upload/so_0/v1790166800/e-ticketing.jpg",
       ratio: "3036 / 2160",
       caption: "Operator dashboard, tickets, sales trips, activity overview",
@@ -45,7 +45,7 @@ export const acMobility = {
     // reason-coded") temporarily removed per request - restore when ready.
     {
       kind: "video",
-      src: "https://res.cloudinary.com/jsgwyynr/video/upload/f_auto,q_auto:best/v1790168106/pos-design.mp4",
+      src: "https://res.cloudinary.com/jsgwyynr/video/upload/q_auto:best/v1790168106/pos-design.mp4",
       poster: "https://res.cloudinary.com/jsgwyynr/video/upload/so_0/v1790168106/pos-design.jpg",
       ratio: "3022 / 2160",
       bordered: false,
@@ -62,7 +62,7 @@ export const acMobility = {
     },
     {
       kind: "video",
-      src: "https://res.cloudinary.com/jsgwyynr/video/upload/f_auto,q_auto:best/v1790168497/tap_go-app.mp4",
+      src: "https://res.cloudinary.com/jsgwyynr/video/upload/q_auto:best/v1790168497/tap_go-app.mp4",
       poster: "https://res.cloudinary.com/jsgwyynr/video/upload/so_0/v1790168497/tap_go-app.jpg",
       ratio: "3036 / 2160",
       caption: "Tap&Go core flow: home, booking, and ticket confirmation screens",
