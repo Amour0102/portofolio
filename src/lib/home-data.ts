@@ -107,8 +107,11 @@ export const aboutParagraphs: string[] = [
 // "More Work" reel. A video is coming - when the file is ready, point `src` at it
 // (e.g. "/videos/more-work.mp4") and optionally set a `poster` still. While this is
 // null the section shows the placeholder surface from the Paper frame.
+// Hosted on Cloudinary with f_auto,q_auto so it is delivered optimized (~8MB vs
+// the 48MB source) and per-browser format; poster is the first frame.
 export const moreWorkVideo: { src: string; poster?: string } | null = {
-  src: "/images/more-work.mp4",
+  src: "https://res.cloudinary.com/jsgwyynr/video/upload/f_auto,q_auto/v1790165472/more-work.mp4",
+  poster: "https://res.cloudinary.com/jsgwyynr/video/upload/so_0/v1790165472/more-work.jpg",
 };
 
 export const socials = {
