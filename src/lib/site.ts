@@ -1,5 +1,5 @@
 /** Open Graph / Twitter / link-preview image (1200×630) */
-export const SOCIAL_THUMBNAIL = "/images/social-thumbnail-hero-1200x630.png";
+export const SOCIAL_THUMBNAIL = "/images/social-thumbnail-hero-2-1200x630.png";
 
 export const SOCIAL_THUMBNAIL_WIDTH = 1200;
 export const SOCIAL_THUMBNAIL_HEIGHT = 630;
