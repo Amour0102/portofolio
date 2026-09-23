@@ -28,9 +28,12 @@ export const orla3 = {
 
   visuals: [
     { kind: "web", image: { src: "/images/case-studies/orla3/orla3-1.png", alt: "Orla3, feed with a videographer showcase" }, ratio: "816 / 581", bordered: false, caption: "Discovering a videographer; showreel, price range, and availability." },
-    { kind: "web", image: { src: "/images/case-studies/orla3/orla3-2.png", alt: "Orla3, chat with delivery preview and booking details" }, ratio: "816 / 580", caption: "Delivery arrives in chat, with the booking details alongside." },
-    { kind: "web", image: { src: "/images/case-studies/orla3/orla3-3.png", alt: "Orla3, requesting amendments in chat" }, ratio: "817 / 581", caption: "Requesting amendments before the work is accepted." },
-    { kind: "web", image: { src: "/images/case-studies/orla3/orla3-4.png", alt: "Orla3, confirm and pay with escrow" }, ratio: "816 / 580", caption: "Confirm and pay, the fee held in escrow until handover." },
+    { kind: "web", image: { src: "/images/case-studies/orla3/location-time.png", alt: "Orla3, choosing location and time for a booking" }, ratio: "4320 / 3072", bordered: false },
+    { kind: "web", image: { src: "/images/case-studies/orla3/question1.png", alt: "Orla3, answering a brief question" }, ratio: "4320 / 3072", bordered: false },
+    { kind: "web", image: { src: "/images/case-studies/orla3/payment.png", alt: "Orla3, payment" }, ratio: "4320 / 3072", bordered: false },
+    { kind: "web", image: { src: "/images/case-studies/orla3/buyer-work-review.png", alt: "Orla3, buyer reviewing the delivered work" }, ratio: "4320 / 3072", bordered: false },
+    { kind: "web", image: { src: "/images/case-studies/orla3/amendment-request.png", alt: "Orla3, requesting an amendment" }, ratio: "4320 / 3072", bordered: false },
+    { kind: "web", image: { src: "/images/case-studies/orla3/video-declined.png", alt: "Orla3, a declined video delivery" }, ratio: "4320 / 3072", bordered: false },
   ] as VisualSection[],
 
   next: { label: "Next Case Study", href: "/work/ac-mobility" },
