@@ -26,8 +26,8 @@ export const muvuzi = {
   ] as MetaRow[],
 
   visuals: [
-    { kind: "video", src: "/images/case-studies/muvuzi/muvuzi-brand.mp4", ratio: "3710 / 2160", caption: "The Muvuzi identity, one wordmark and a green system built for every surface." },
-    { kind: "video", src: "/images/case-studies/muvuzi/muvuzi-landing2.mp4", ratio: "3438 / 2160", bordered: false, caption: "The landing page, six modules distilled into one scroll for pharmacy owners." },
+    { kind: "video", src: "https://res.cloudinary.com/jsgwyynr/video/upload/f_auto,q_auto:best/v1790168258/muvuzi-brand.mp4", poster: "https://res.cloudinary.com/jsgwyynr/video/upload/so_0/v1790168258/muvuzi-brand.jpg", ratio: "3710 / 2160", caption: "The Muvuzi identity, one wordmark and a green system built for every surface." },
+    { kind: "video", src: "https://res.cloudinary.com/jsgwyynr/video/upload/f_auto,q_auto:best/v1790168244/muvuzi-landing2.mp4", poster: "https://res.cloudinary.com/jsgwyynr/video/upload/so_0/v1790168244/muvuzi-landing2.jpg", ratio: "3438 / 2160", bordered: false, caption: "The landing page, six modules distilled into one scroll for pharmacy owners." },
     { kind: "video", src: "https://res.cloudinary.com/jsgwyynr/video/upload/f_auto,q_auto:best/v1790167173/muvuzi-showcase1.mp4", poster: "https://res.cloudinary.com/jsgwyynr/video/upload/so_0/v1790167173/muvuzi-showcase1.jpg", ratio: "3326 / 2160", caption: "Inside the workspace; inventory, dispensing, and insurance in one flow." },
     { kind: "web", image: { src: "/images/case-studies/muvuzi/findmedication.png", alt: "Muvuzi, patients search a medication and see nearby pharmacies with it in stock" }, ratio: "4536 / 2946", caption: "The patient side: search a medication, see which nearby pharmacies have it in stock." },
     { kind: "video", src: "https://res.cloudinary.com/jsgwyynr/video/upload/f_auto,q_auto:best/v1790167749/muvuzi-showcase2.mp4", poster: "https://res.cloudinary.com/jsgwyynr/video/upload/so_0/v1790167749/muvuzi-showcase2.jpg", ratio: "3326 / 2160", caption: "Purchase orders; procurement across suppliers, from draft to received." },

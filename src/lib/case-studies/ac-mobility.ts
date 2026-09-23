@@ -45,7 +45,8 @@ export const acMobility = {
     // reason-coded") temporarily removed per request - restore when ready.
     {
       kind: "video",
-      src: "/images/case-studies/ac-mobility/pos-design.mp4",
+      src: "https://res.cloudinary.com/jsgwyynr/video/upload/f_auto,q_auto:best/v1790168106/pos-design.mp4",
+      poster: "https://res.cloudinary.com/jsgwyynr/video/upload/so_0/v1790168106/pos-design.jpg",
       ratio: "3022 / 2160",
       bordered: false,
       caption: "The agent POS; selling a ticket, from trip details to issued receipt.",
