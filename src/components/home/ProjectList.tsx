@@ -31,7 +31,7 @@ function ProjectItem({ project: p, priority }: { project: HomeProject; priority?
       className={`group relative w-full overflow-hidden ${radius} transition-[transform,box-shadow] duration-300 ease-out will-change-transform hover:-translate-y-1 hover:shadow-[0_16px_32px_-24px_rgba(17,42,80,0.22)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 ${
         matted
           ? `${p.surfaceClass} p-4`
-          : "ring-1 ring-inset ring-[#efefef] dark:ring-white/[0.06]"
+          : `ring-1 ring-inset ${p.borderClass ?? "ring-[#efefef] dark:ring-white/[0.06]"}`
       }`}
     >
       {/* aspect-ratio lives on the image box (not the padded outer) so the

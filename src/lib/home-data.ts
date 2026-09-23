@@ -20,6 +20,11 @@ export type HomeProject = {
    * branded/opaque image reads as framed and the mat follows light/dark mode.
    */
   surfaceClass?: string;
+  /**
+   * Optional stronger ring color for a non-matted thumbnail whose image blends
+   * into the page (e.g. a white-background cover). Defaults to the faint ring.
+   */
+  borderClass?: string;
 };
 
 export const homeProjects: HomeProject[] = [
@@ -60,6 +65,7 @@ export const homeProjects: HomeProject[] = [
     width: 590,
     height: 287,
     href: "/work/voit",
+    borderClass: "ring-[#E4E4E4] dark:ring-white/[0.08]",
   },
   {
     id: "orla3",
