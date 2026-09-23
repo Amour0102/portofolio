@@ -33,7 +33,7 @@ export const orla3 = {
     { kind: "web", image: { src: "/images/case-studies/orla3/question1.png", alt: "Orla3, an open question about the video brief" }, ratio: "4320 / 3072", bordered: false, caption: "The brief begins as a plain question, not a form." },
     { kind: "web", image: { src: "/images/case-studies/orla3/payment.png", alt: "Orla3, confirm and pay with escrow and a full price breakdown" }, ratio: "4320 / 3072", bordered: false, caption: "The full financial commitment is visible before the buyer pays." },
     { kind: "web", image: { src: "/images/case-studies/orla3/buyer-work-review.png", alt: "Orla3, reviewing the delivered work with accept, amend, or decline" }, ratio: "4320 / 3072", bordered: false, caption: "One screen resolves the most important moment between buyer and seller." },
-    { kind: "web", image: { src: "/images/case-studies/orla3/amendment-request.png", alt: "Orla3, describing the amendments needed on delivered work" }, ratio: "4320 / 3072", bordered: false, caption: "Marketplace rules surface at the moment they affect the transaction." },
+    { kind: "web", image: { src: "/images/case-studies/orla3/amendment-request.png", alt: "Orla3, describing the amendments needed on delivered work" }, ratio: "4314 / 3066", bordered: false, caption: "Marketplace rules surface at the moment they affect the transaction." },
     { kind: "web", image: { src: "/images/case-studies/orla3/video-declined.png", alt: "Orla3, a declined video preview with the payment held" }, ratio: "4320 / 3072", bordered: false, caption: "A decline keeps the payment in escrow, not with the seller." },
   ] as VisualSection[],
 
