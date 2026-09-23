@@ -110,8 +110,8 @@ export const aboutParagraphs: string[] = [
 // Hosted on Cloudinary with f_auto,q_auto so it is delivered optimized (~8MB vs
 // the 48MB source) and per-browser format; poster is the first frame.
 export const moreWorkVideo: { src: string; poster?: string } | null = {
-  src: "https://res.cloudinary.com/jsgwyynr/video/upload/f_auto,q_auto/v1790165472/more-work.mp4",
-  poster: "https://res.cloudinary.com/jsgwyynr/video/upload/so_0/v1790165472/more-work.jpg",
+  src: "https://res.cloudinary.com/jsgwyynr/video/upload/f_auto,q_auto/v1790166630/more-work.mp4",
+  poster: "https://res.cloudinary.com/jsgwyynr/video/upload/so_0/v1790166630/more-work.jpg",
 };
 
 export const socials = {
