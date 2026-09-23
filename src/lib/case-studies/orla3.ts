@@ -2,7 +2,8 @@
 // Orla3 case study - content, mirroring the Paper source of truth
 // ("Designing trust into a marketplace where money moves before trust exists.").
 // Typography is normalized to PP Neue Montreal to match the other case studies
-// (this frame uses Inter). Visual sections carry no captions.
+// (this frame uses Inter). Each visual carries a short caption tied to the moment
+// it shows in the buyer flow; the opening feed shot keeps its original line.
 // ─────────────────────────────────────────────────────────────────────────────
 import { MetaRow, VisualSection } from "./types";
 
@@ -28,12 +29,12 @@ export const orla3 = {
 
   visuals: [
     { kind: "web", image: { src: "/images/case-studies/orla3/orla3-1.png", alt: "Orla3, feed with a videographer showcase" }, ratio: "816 / 581", bordered: false, caption: "Discovering a videographer; showreel, price range, and availability." },
-    { kind: "web", image: { src: "/images/case-studies/orla3/location-time.png", alt: "Orla3, choosing location and time for a booking" }, ratio: "4320 / 3072", bordered: false },
-    { kind: "web", image: { src: "/images/case-studies/orla3/question1.png", alt: "Orla3, answering a brief question" }, ratio: "4320 / 3072", bordered: false },
-    { kind: "web", image: { src: "/images/case-studies/orla3/payment.png", alt: "Orla3, payment" }, ratio: "4320 / 3072", bordered: false },
-    { kind: "web", image: { src: "/images/case-studies/orla3/buyer-work-review.png", alt: "Orla3, buyer reviewing the delivered work" }, ratio: "4320 / 3072", bordered: false },
-    { kind: "web", image: { src: "/images/case-studies/orla3/amendment-request.png", alt: "Orla3, requesting an amendment" }, ratio: "4320 / 3072", bordered: false },
-    { kind: "web", image: { src: "/images/case-studies/orla3/video-declined.png", alt: "Orla3, a declined video delivery" }, ratio: "4320 / 3072", bordered: false },
+    { kind: "web", image: { src: "/images/case-studies/orla3/location-time.png", alt: "Orla3, choosing shoot location, date, and estimated duration" }, ratio: "4320 / 3072", bordered: false, caption: "Pricing complexity stays behind a simpler question for the buyer." },
+    { kind: "web", image: { src: "/images/case-studies/orla3/question1.png", alt: "Orla3, an open question about the video brief" }, ratio: "4320 / 3072", bordered: false, caption: "The brief begins as a plain question, not a form." },
+    { kind: "web", image: { src: "/images/case-studies/orla3/payment.png", alt: "Orla3, confirm and pay with escrow and a full price breakdown" }, ratio: "4320 / 3072", bordered: false, caption: "The full financial commitment is visible before the buyer pays." },
+    { kind: "web", image: { src: "/images/case-studies/orla3/buyer-work-review.png", alt: "Orla3, reviewing the delivered work with accept, amend, or decline" }, ratio: "4320 / 3072", bordered: false, caption: "One screen resolves the most important moment between buyer and seller." },
+    { kind: "web", image: { src: "/images/case-studies/orla3/amendment-request.png", alt: "Orla3, describing the amendments needed on delivered work" }, ratio: "4320 / 3072", bordered: false, caption: "Marketplace rules surface at the moment they affect the transaction." },
+    { kind: "web", image: { src: "/images/case-studies/orla3/video-declined.png", alt: "Orla3, a declined video preview with the payment held" }, ratio: "4320 / 3072", bordered: false, caption: "A decline keeps the payment in escrow, not with the seller." },
   ] as VisualSection[],
 
   next: { label: "Next Case Study", href: "/work/ac-mobility" },
