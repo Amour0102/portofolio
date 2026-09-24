@@ -38,6 +38,7 @@ export const orla3 = {
     { kind: "web", image: { src: "/images/case-studies/orla3/buyer-work-review.png", alt: "Orla3, reviewing the delivered work with accept, amend, or decline" }, ratio: "4320 / 3072", bordered: false, caption: "One screen resolves the most important moment between buyer and seller." },
     { kind: "web", image: { src: "/images/case-studies/orla3/amendment-request.png", alt: "Orla3, describing the amendments needed on delivered work" }, ratio: "4314 / 3066", bordered: false, caption: "Marketplace rules surface at the moment they affect the transaction." },
     { kind: "web", image: { src: "/images/case-studies/orla3/video-declined.png", alt: "Orla3, a declined video preview with the payment held" }, ratio: "4320 / 3072", bordered: false, caption: "A decline keeps the payment in escrow, not with the seller." },
+    { kind: "web", image: { src: "/images/case-studies/orla3/reason-to-decline.png", alt: "Orla3, a reason-for-declining dialog with set reasons and a required explanation" }, ratio: "4320 / 3072", bordered: false, caption: "Declining is structured: a set reason and a written explanation for the seller." },
   ] as VisualSection[],
 
   next: { label: "Next Case Study", href: "/work/ac-mobility" },
