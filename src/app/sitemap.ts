@@ -1,48 +1,24 @@
-import { MetadataRoute } from "next";
-import fs from "fs";
-import path from "path";
+import type { MetadataRoute } from "next";
 import { getSiteUrl } from "@/lib/site";
 
-// ── Static routes ──────────────────────────────────────────────────────────────
-// Add new top-level pages here. Work case studies are auto-discovered below.
-const STATIC_ROUTES: Array<{
-  path: string;
-  changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
-  priority: number;
-}> = [
-  { path: "/", changeFrequency: "weekly", priority: 1.0 },
-];
-
-// ── Auto-discover /work/* case studies ────────────────────────────────────────
-function getCaseStudyRoutes(): MetadataRoute.Sitemap {
-  const workDir = path.join(process.cwd(), "src", "app", "work");
-
-  if (!fs.existsSync(workDir)) return [];
-
-  return fs
-    .readdirSync(workDir, { withFileTypes: true })
-    .filter(
-      (entry) =>
-        entry.isDirectory() &&
-        fs.existsSync(path.join(workDir, entry.name, "page.tsx"))
-    )
-    .map((entry) => ({
-      url: `${getSiteUrl()}/work/${entry.name}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    }));
-}
-
+// Lists the homepage and every case study for search engines.
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteUrl();
+  const lastModified = new Date();
 
-  const staticEntries: MetadataRoute.Sitemap = STATIC_ROUTES.map((route) => ({
-    url: `${base}${route.path}`,
-    lastModified: new Date(),
-    changeFrequency: route.changeFrequency,
-    priority: route.priority,
+  const paths = [
+    "",
+    "/work/ac-mobility",
+    "/work/muvuzi",
+    "/work/handoff",
+    "/work/voit",
+    "/work/orla3",
+  ];
+
+  return paths.map((path) => ({
+    url: `${base}${path}`,
+    lastModified,
+    changeFrequency: "monthly",
+    priority: path === "" ? 1 : 0.8,
   }));
-
-  return [...staticEntries, ...getCaseStudyRoutes()];
 }

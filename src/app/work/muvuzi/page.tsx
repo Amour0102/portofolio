@@ -2,27 +2,27 @@ import CaseStudyLayout from "@/components/case-study/CaseStudyLayout";
 import Overview from "@/components/case-study/Overview";
 import VisualSection from "@/components/case-study/VisualSection";
 import NextCaseStudy from "@/components/case-study/NextCaseStudy";
-import { voit } from "@/lib/case-studies/voit";
+import { muvuzi } from "@/lib/case-studies/muvuzi";
 import { caseStudyMetadata } from "@/lib/case-studies/metadata";
 import CaseStudyJsonLd from "@/components/case-study/CaseStudyJsonLd";
 
 export const metadata = caseStudyMetadata({
-  title: voit.title,
-  description: voit.summary,
-  path: "/work/voit",
+  title: muvuzi.title,
+  description: muvuzi.summary,
+  path: "/work/muvuzi",
 });
 
-export default function VoitPage() {
+export default function MuvuziPage() {
   return (
     <CaseStudyLayout>
-      <CaseStudyJsonLd title={voit.title} description={voit.summary} path="/work/voit" />
-      <Overview title={voit.title} intro={voit.intro} meta={voit.meta} />
+      <CaseStudyJsonLd title={muvuzi.title} description={muvuzi.summary} path="/work/muvuzi" />
+      <Overview title={muvuzi.title} intro={muvuzi.intro} meta={muvuzi.meta} />
 
-      {voit.visuals.map((section, i) => (
+      {muvuzi.visuals.map((section, i) => (
         <VisualSection key={i} section={section} />
       ))}
 
-      <NextCaseStudy href={voit.next.href} label={voit.next.label} />
+      <NextCaseStudy href={muvuzi.next.href} label={muvuzi.next.label} />
     </CaseStudyLayout>
   );
 }

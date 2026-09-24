@@ -1,28 +1,31 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Gallery from "@/components/Gallery";
-import Projects from "@/components/Projects";
-import Footer from "@/components/Footer";
-import { siteX } from "@/lib/layout";
+import type { Metadata } from "next";
+import SiteBar from "@/components/home/SiteBar";
+import Intro from "@/components/home/Intro";
+import ProjectList from "@/components/home/ProjectList";
+import MoreWork from "@/components/home/MoreWork";
+import WritingList from "@/components/home/WritingList";
+import About from "@/components/home/About";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
+    <div className="home-root min-h-screen w-full bg-white font-grotesk text-[#333333] antialiased [--home-bg:#FFFFFF] dark:bg-[#0D0D0D] dark:text-white dark:[--home-bg:#0D0D0D]">
+      <div className="flex flex-col items-stretch gap-16 pb-16">
+        <SiteBar />
 
-      <main className="flex-1 flex flex-col items-center">
-        <div className={`w-full flex justify-center ${siteX} pt-10 sm:pt-16 lg:pt-[80px] max-lg:pb-10 lg:pb-[56px]`}>
-          <Hero />
-        </div>
+        <main className="flex flex-col items-center gap-16 px-6">
+          <Intro />
+          <ProjectList />
+          <MoreWork />
+          <WritingList />
+          <About />
+        </main>
 
-        <Gallery />
-
-        <div className={`w-full flex justify-center ${siteX} max-lg:pt-4 lg:pt-[56px] pb-12 sm:pb-16 lg:pb-[80px]`}>
-          <Projects />
-        </div>
-      </main>
-
-      <Footer />
+        <SiteBar />
+      </div>
     </div>
   );
 }

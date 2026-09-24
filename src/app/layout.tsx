@@ -9,6 +9,7 @@ import {
   SOCIAL_THUMBNAIL_HEIGHT,
   SOCIAL_THUMBNAIL_WIDTH,
 } from "@/lib/site";
+import { socials } from "@/lib/home-data";
 import "./globals.css";
 
 const inter = Inter({
@@ -26,7 +27,7 @@ const arizonia = Arizonia({
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
-  title: "Cyusa Amour — Product Designer",
+  title: "Cyusa Amour, Product Designer",
   description:
     "Product designer building transportation infrastructure and language preservation tools. Based in Kigali.",
   icons: {
@@ -38,23 +39,24 @@ export const metadata: Metadata = {
     other: { rel: "manifest", url: "/site.webmanifest" },
   },
   openGraph: {
-    title: "Cyusa Amour — Product Designer",
+    title: "Cyusa Amour, Product Designer",
     description:
       "Product designer building transportation infrastructure and language preservation tools.",
     type: "website",
+    url: getSiteUrl(),
     images: [
       {
         url: SOCIAL_THUMBNAIL,
         width: SOCIAL_THUMBNAIL_WIDTH,
         height: SOCIAL_THUMBNAIL_HEIGHT,
         type: "image/png",
-        alt: "Cyusa Amour — Product Designer",
+        alt: "Cyusa Amour, Product Designer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cyusa Amour — Product Designer",
+    title: "Cyusa Amour, Product Designer",
     description:
       "Product designer building transportation infrastructure and language preservation tools.",
     images: [
@@ -62,11 +64,46 @@ export const metadata: Metadata = {
         url: SOCIAL_THUMBNAIL,
         width: SOCIAL_THUMBNAIL_WIDTH,
         height: SOCIAL_THUMBNAIL_HEIGHT,
-        alt: "Cyusa Amour — Product Designer",
+        alt: "Cyusa Amour, Product Designer",
       },
     ],
   },
 };
+
+// Person + WebSite structured data so search engines can identify the site
+// owner and link the social profiles (helps rich results / knowledge panel).
+function structuredData() {
+  const site = getSiteUrl();
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${site}/#person`,
+        name: "Cyusa Amour",
+        jobTitle: "Product Designer",
+        url: site,
+        image: new URL(SOCIAL_THUMBNAIL, site).toString(),
+        email: socials.email.replace(/^mailto:/, ""),
+        sameAs: [socials.x, socials.linkedin],
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Kigali",
+          addressCountry: "RW",
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${site}/#website`,
+        url: site,
+        name: "Cyusa Amour, Product Designer",
+        description:
+          "Product designer building transportation infrastructure and language preservation tools.",
+        publisher: { "@id": `${site}/#person` },
+      },
+    ],
+  };
+}
 
 export default function RootLayout({
   children,
@@ -78,11 +115,15 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="bg-white dark:bg-[#0D0D0D] text-[#333333] dark:text-white antialiased transition-colors duration-200" suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData()) }}
+        />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           {children}
-          <Analytics />
-          <SpeedInsights />
         </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
